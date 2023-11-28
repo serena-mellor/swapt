@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2023_11_27_165528) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -18,8 +21,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_165528) do
   end
 
   create_table "follows", force: :cascade do |t|
-    t.integer "follower_id"
-    t.integer "followee_id"
+    t.bigint "follower_id"
+    t.bigint "followee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["followee_id"], name: "index_follows_on_followee_id"
@@ -30,8 +33,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_165528) do
     t.string "title"
     t.text "description"
     t.boolean "swappable"
-    t.integer "user_id", null: false
-    t.integer "category_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
@@ -39,8 +42,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_165528) do
   end
 
   create_table "outfit_items", force: :cascade do |t|
-    t.integer "outfit_id", null: false
-    t.integer "item_id", null: false
+    t.bigint "outfit_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_outfit_items_on_item_id"
@@ -49,7 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_165528) do
 
   create_table "outfits", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_outfits_on_user_id"
