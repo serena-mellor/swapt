@@ -1,0 +1,39 @@
+/* app/assets/stylesheets/bottom_navbar.css */
+
+.fixed.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+
+.fixed.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.fixed.navbar i {
+  font-size: 24px;
+}
+
+/* Style individual icons if needed */
+.fixed.navbar i.fa-home {
+  color: #ffcc00;
+}
+
+.fixed.navbar i.fa-newspaper {
+  color: #3498db;
+}
+
+.fixed.navbar i.fa-envelope {
+  color: #e74c3c;
+}
+
+.fixed.navbar i.fa-user {
+  color: #2ecc71;
+}
+    
