@@ -29,6 +29,7 @@ gem "jbuilder"
 gem "devise"
 
 gem "dotenv-rails"
+gem "cloudinary"
 
 
 
