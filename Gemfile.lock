@@ -106,6 +106,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     drb (2.2.0)
       ruby2_keywords
     error_highlight (0.5.1)
@@ -157,8 +161,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
-    pg (1.5.4)
     orm_adapter (0.5.0)
+    pg (1.5.4)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.4)
@@ -263,6 +267,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  dotenv-rails
   error_highlight (>= 0.4.0)
   importmap-rails
   jbuilder
