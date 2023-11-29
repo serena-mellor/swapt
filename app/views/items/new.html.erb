@@ -1,0 +1,13 @@
+<div class="upload-item-container m-3">
+  <%= simple_form_for @item do |f| %>
+    <h2 class="header-create-form">Upload new item</h2>
+    <div class="upload-item-form">
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.association :category, prompt: "Choose a category" %>
+      <%= f.input :swappable%>
+      <%= f.input :photo, as: :file, label: "Add photo with clear background" %>
+      <%= f.submit "Upload", class:"btn-main btn-create-item" %>
+    </div>
+  <% end %>
+</div>

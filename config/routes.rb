@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "pages#home"
-  get "/menu", to: "pages#menu"
 
-  resources :items, only: [:show, :index, :new, :create, :destroy] 
+  root "pages#landing"
+
+  get '/home', to: 'pages#home'
+  
+  resources :items do
+  end
 end
