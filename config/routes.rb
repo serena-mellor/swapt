@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   root "pages#landing"
 
   get '/home', to: 'pages#home'
+  
 
-  resources :items, only: [:index]
+  resources :items do
+  end
 
 end

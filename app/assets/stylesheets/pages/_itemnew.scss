@@ -1,0 +1,26 @@
+.upload-item-container{
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-create-form {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.btn-create-item {
+  margin: 0 auto;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.simple_form.new_item{
+  .form-control, .form-select, .form-check-input{
+  border-color: #798478;
+  }
+
+}
