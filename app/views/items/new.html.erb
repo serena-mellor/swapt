@@ -4,9 +4,9 @@
     <div class="upload-item-form">
       <%= f.input :title %>
       <%= f.input :description %>
-      <%= f.association :category %>
-      <%= f.input :swappable %>
-      <%= f.input :photo, as: :file %>
+      <%= f.association :category, prompt: "Choose a category" %>
+      <%= f.input :swappable%>
+      <%= f.input :photo, as: :file, label: "Add photo with clear background" %>
       <%= f.submit "Upload", class:"btn-main btn-create-item" %>
     </div>
   <% end %>
