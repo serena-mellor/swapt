@@ -118,7 +118,7 @@ sandals.photo.attach(io: sandals_image, filename: "image/sandals")
 sandals.save
 
 slip_ons_image = URI.open("https://img01.ztat.net/article/spp-media-p1/4c87132b239630d488c7473b4d129979/b577e92a16c34d59a0b002a2030bef2c.jpg?imwidth=1800")
-slip_ons = Item.new(title: "Casual Slip_Ons", description: "Easy and stylish slip-on shoes for a laid-back look.", user: serena, category: shoes)
+slip_ons = Item.new(title: "Casual Slip Ons", description: "Easy and stylish slip-on shoes for a laid-back look.", user: serena, category: shoes)
 slip_ons.photo.attach(io: slip_ons_image, filename: "image/slip-ons")
 slip_ons.save
 
