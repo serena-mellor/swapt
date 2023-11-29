@@ -1,9 +1,16 @@
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F3EDE2;
+  padding: 25px;
+}
+
 .upload-item-container{
   font-family: 'Poppins', sans-serif;
 }
 
 .header-create-form {
-  margin-top: 30px;
   margin-bottom: 25px;
   font-weight: bold;
 }
