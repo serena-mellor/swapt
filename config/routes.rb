@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   resources :items do
   end
-  
+
   get "/menu", to: "pages#menu"
+  get '/profile', to: 'users#profile'
 end
