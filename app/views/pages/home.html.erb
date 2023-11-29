@@ -7,7 +7,7 @@
     <%= video_tag "fashion_video.mp4", id: "video", autoplay: true, muted: true, controls: false, loop: true, playsinline: true %>
   </div>
   <div class="btns-landing-page">
-    <%= link_to "Log In", root_path, class:"btn-main" %>
+    <%= link_to "Log In", new_user_session_path, class:"btn-main" %>
     <%= link_to "Sign Up", new_user_registration_path, id:"btn-sign-up", class:"btn-secondary" %>
     <%= link_to "Continue As Visitor", root_path, id:"link-visitor" %>
   </div>
