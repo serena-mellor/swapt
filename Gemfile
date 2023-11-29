@@ -55,6 +55,8 @@ gem "sassc-rails"
 
 gem "bootstrap", "~> 5.2"
 
+gem "font-awesome-sass", "~> 6.1"
+
 gem "simple_form"
 
 group :development, :test do
