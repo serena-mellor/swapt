@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row gx-4 gy-4">
+    <% if @items.any? %>
+      <% if params[:query] %>
+        <h2>Your search results:</h2>
+      <% end %>
+        <% @items.each do |item| %>
+        <div class="col-6 image-container">
+          <%= cl_image_tag(item.photo.key, class: "item-picture") %>
+        </div>
+      <% end %>
+    <% else %>
+      <h2>Sorry, no items found...</h2>
+    <% end %>
+  </div>
+</div>
