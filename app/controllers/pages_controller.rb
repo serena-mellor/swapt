@@ -6,8 +6,4 @@ class PagesController < ApplicationController
 
   def home
   end
-
-  def menu
-    # @options = ["My Closet", "Explore", "Swappable Items", "Categories"]
-  end
 end
