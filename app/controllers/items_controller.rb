@@ -1,13 +1,14 @@
 class ItemsController < ApplicationController
 skip_before_action :authenticate_user!, only: [:index, :show]
-  
+
   def show
     @item = Item.find(params[:id])
   end
 
   def index
     @items = Item.where(swappable: true)
-    
+  end
+
   def new
     @item = Item.new
   end
@@ -20,7 +21,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     else
       render :new, status: 422
     end
-
   end
 
   private
