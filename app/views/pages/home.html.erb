@@ -1,14 +1,14 @@
-<div class="site-wrapper">
-  <div class=landing-page-headers>
-    <h1 class="main-title">SWAPT</h1>
-    <h2 class="secondary-subheader">Your Wardrobe, Your Way.</h2>
+<section class="menu-container">
+  <div class="closet-menu-item">
+    <h2 class="menu-titles">My closet</h2>
   </div>
-  <div class="video-intro">
-    <%= video_tag "fashion_video.mp4", id: "video", autoplay: true, muted: true, controls: false, loop: true, playsinline: true %>
+  <div class="explore-menu-item">
+    <h2 class="menu-titles">Outfits</h2>
   </div>
-  <div class="btns-landing-page">
-    <%= link_to "Log In", root_path, class:"btn-main" %>
-    <%= link_to "Sign Up", new_user_registration_path, id:"btn-sign-up", class:"btn-secondary" %>
-    <%= link_to "Continue As Visitor", root_path, id:"link-visitor" %>
+  <div class="swappable-menu-item">
+    <h2 class="menu-titles">Swappable Items</h2>
   </div>
-</div>
+  <div class="category-menu-item">
+    <h2 class="menu-titles">Categories</h2>
+  </div>
+</section>
