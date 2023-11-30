@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :swaps, only: [:create]
   end
 
+  get '/my_closet', to: 'users#closet'
+
   resources :outfits
 
   get '/profile/:id', to: 'users#profile'
