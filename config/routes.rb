@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   resources :items do
     resources :swaps, only: [:create]
   end
-
+  resources :swaps, only: [:show, :index]
+  
   resources :outfits
 
   get '/profile/:id', to: 'users#profile'

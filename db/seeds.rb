@@ -153,12 +153,12 @@ white_sweater.photo.attach(io: white_sweater_image, filename: "image/white_sweat
 white_sweater.save
 
 linen_image = URI.open("https://imgproxy.oascompany.com/imgproxy/resize:fit/width:1280/quality:90/aHR0cHM6Ly9vYXMuY2VudHJhY2RuLm5ldC9jbGllbnQvZHluYW1pYy9pbWFnZXMvMzUxXzAzZjIzNzcxZTYtYXJteS1jdWJhLXRlcnJ5LXNoaXJ0LTcwMDMtMzctYS1vcmlnaW5hbC5qcGc=.jpg")
-linen = Item.new(title: "Linen Short Sleeve Shirt", description: "Perfect for warm weather with a breathable linen fabric.", user: gavin, category: shirts)
+linen = Item.new(title: "Linen Short Sleeve Shirt", description: "Perfect for warm weather with a breathable linen fabric.", swappable: true, user: gavin, category: shirts)
 linen.photo.attach(io: linen_image, filename: "image/linen")
 linen.save
 
 crossbody_bag_image = URI.open("https://asset1.cxnmarksandspencer.com/is/image/mands/Faux-Leather-Cross-Body-Bag/SD_01_T01_9846C_Y0_X_EC_90?$PDP_IMAGEGRID_ZOOM_LG$")
-crossbody_bag = Item.new(title: "Chic Crossbody Bag", description: "A stylish and convenient accessory for on-the-go.", user: camilla, category: accessories)
+crossbody_bag = Item.new(title: "Chic Crossbody Bag", description: "A stylish and convenient accessory for on-the-go.",swappable: true, user: camilla, category: accessories)
 crossbody_bag.photo.attach(io: crossbody_bag_image, filename: "image/crossbody_bag")
 crossbody_bag.save
 
