@@ -1,21 +1,22 @@
 <div class="container">
   <h3 class= "title">My received swaps</h3>
-  <% @swaps_requested.each do |swap| %>
+  <%  @swaps_received.each do |swap| %>
   <div class="swap card"></div>
   <%= swap.id %>
     <div class= "d-flex">
       <div >
         <%= render "items/item", item: swap.requested_item, full_width: true %>
-        <%= swap.sender.username %>
+       <%= link_to swap.sender.username, closet_path(swap.sender) %>
+
       </div>
         <->
       <% if swap.second_item.present? %>
       <div>
         <%= render "items/item", item: swap.second_item, full_width: true %>
-        <%= swap.receiver.username %>
       </div>
       <% else %>
       <div>
+          <%= link_to swap.receiver.username, closet_path(swap.receiver) %>
       <%= swap.status %>
       </div>
       <% end %>

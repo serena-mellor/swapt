@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
 
   resources :items do
-    resources :swaps, only: [:create]
+    resources :swaps, only: [:create, :update]
   end
+
   resources :swaps, only: [:show, :index]
 
   get '/received_swaps', to: 'swaps#received_swaps'

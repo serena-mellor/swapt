@@ -6,13 +6,14 @@
     <div class= "d-flex">
       <div class="col-6">
         <%= render "items/item", item: swap.requested_item, full_width: true %>
-        <%= swap.sender.username %>
+        <p>I've requested this from <%= swap.receiver.username %></p>
+
       </div>
         <->
       <% if swap.second_item.present? %>
       <div class="col-6">
         <%= render "items/item", item: swap.second_item, full_width: true %>
-        <%= link_to swap.receiver.username, closet_path(swap.receiver) %>
+        <p><%= swap.receiver.username %> has requested this item from me</p>
       </div>
       <% else %>
       <div>

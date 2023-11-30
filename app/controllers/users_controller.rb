@@ -13,6 +13,6 @@ class UsersController < ApplicationController
 
   def closet
     @user = User.find(params[:user_id])
-    @items = @user.items.where(swappable: true)
+    @items = @user.items.where(swappable: true).reject { |item| Swap.all.any? { |swap| swap.requested_item == item && swap.status == "pending" }}
   end
 end

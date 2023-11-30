@@ -11,6 +11,8 @@
   </head>
 
   <body style="<%= background_colour(params) %>">
+    <%= current_user.username %>
+    <%= current_user.id %>
     <%= yield %>
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
