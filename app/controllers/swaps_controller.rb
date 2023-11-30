@@ -2,9 +2,12 @@ class SwapsController < ApplicationController
 
   def index
     @swaps_requested = Swap.all.where(sender: current_user)
-    @swaps_received = Swap.all.where(receiver: current_user)
   end
 
+  def received_swaps
+    @swaps_received = Swap.all.where(receiver: current_user)
+  end
+  
   def create
     @swap = Swap.new
     @item = Item.find(params[:item_id])

@@ -17,8 +17,11 @@ Rails.application.routes.draw do
   end
   resources :swaps, only: [:show, :index]
 
+  get '/received_swaps', to: 'swaps#received_swaps'
 
-  get '/my_closet', to: 'users#closet'
+  get '/my_closet', to: 'users#my_closet'
+
+  get '/closet/:user_id', to: 'users#closet', as: :closet
 
   resources :outfits
 
