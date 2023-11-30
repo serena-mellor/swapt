@@ -1,6 +1,7 @@
 /* Style for the bottom navbar */
 .bottom-navbar {
   position: fixed;
+  z-index: 100;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -18,5 +19,3 @@
   color: #fff; /* White text color */
   font-size: 20px;
 }
-
-
