@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
 
   resources :items do
+    resources :swaps, only: [:create]
   end
 
-  get '/profile', to: 'users#profile'
+  resources :outfits
+
+  get '/profile/:id', to: 'users#profile'
 end
