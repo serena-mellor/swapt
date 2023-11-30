@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   end
 
   get '/profile', to: 'users#profile'
+  get '/my_closet', to: 'users#closet'
 end

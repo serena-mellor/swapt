@@ -6,4 +6,8 @@ class UsersController < ApplicationController
   def profile
     # My own show page
   end
+
+  def closet
+    @items = current_user.items
+  end
 end

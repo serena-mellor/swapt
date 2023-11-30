@@ -1,15 +1,4 @@
-<div class="container p-6">
-  <div class="row gx-4 gy-4 mt-4">
-    <% if @items.any? %>
-      <% if params[:query] %>
-    <% end %>
-      <% @items.each do |item| %>
-          <div class="col-6 image-container">
-            <%= link_to cl_image_tag(item.photo.key, class: "item-picture"), item_path(item) %>
-          </div>
-      <% end %>
-        <% else %>
-          <h2>Sorry, no swappable items found...</h2>
-        <% end %>
-  </div>
+<div class="container">
+  <h2 class="header-items">Swappable Items</h2>
+  <%= render "items_list", items: @items %>
 </div>
