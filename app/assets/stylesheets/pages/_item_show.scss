@@ -7,6 +7,9 @@
   justify-content: center;
   margin: 15px;
   flex-direction: column;
+  margin-top: -10px;
+  padding-top: 0;
+  padding-bottom:70px;
 }
 
 .card-description {
@@ -15,10 +18,11 @@
   margin-top: -43px;
   border-top-left-radius: 50px;
   width: 100%;
-  padding: 35px;
+  padding: 5px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding-top: 20px;
 }
 
 .item-image {
@@ -42,6 +46,7 @@
   height: auto;
   display: block;
   margin: 0 auto;
+  margin-top: 20px;
   border-radius: 25px 25px 25px 0;
   box-shadow: 0 0 12px rgba(155, 154, 154, 0.313);
 }
@@ -94,3 +99,23 @@
   padding-top: 7px;
   text-align: center;
 }
+
+.user-item-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.mark-as-swappable {
+display: flex;
+justify-content:center;
+padding: 15px;
+}
+
+.back-arrow {
+  align-items: left;
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.405);
+  padding-left: 21px;
+  margin-top: 10px;
+}
+
