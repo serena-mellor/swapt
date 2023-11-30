@@ -11,10 +11,9 @@ Rails.application.routes.draw do
   root "pages#landing"
 
   get '/home', to: 'pages#home'
-  
+
   resources :items do
   end
 
-  get "/menu", to: "pages#menu"
   get '/profile', to: 'users#profile'
 end
