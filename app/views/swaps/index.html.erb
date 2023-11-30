@@ -1,0 +1,30 @@
+<div class="container">
+  <h3 class="swap-header">My requested swaps</h3>
+
+<div class="surrounding-container">
+  <% @swaps_requested.each do |swap| %>
+    <div class="card-product">
+      <%= cl_image_tag swap.item.cover.key, crop:"fill", width: 200 %>
+        <div class="component-wrapper">
+          <div class="card-and-trans-wrapper">
+            <div class="card-product-infos">
+              <h4><%= swap.item.name %></h4>
+              <p><%= transaction.item.description %></p>
+              <p class="transaction-price"><%= number_with_precision(transaction.item.price, precision: 2, strip_insignificant_zeros: true) %>€</p>
+            </div>
+            <div class="card-product-status">
+              <p>ORDER CONFIRMED</p>
+            </div>
+          </div>
+          <div class="order-details-container">
+            <!-- Button trigger modal -->
+            <!-- type="button" -->
+            <a id="btn-order-details" class="btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              View order details
+            </a>
+          </div>
+        </div>
+      </div>
+  <% end %>
+    </div>
+</div>
