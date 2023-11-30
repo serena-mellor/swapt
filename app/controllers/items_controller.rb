@@ -26,6 +26,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   private
 
   def items_params
-    params.require(:item).permit(:title, :description, :swappable,:category_id, :photo)
+    params.require(:item).permit(:title, :description, :swappable, :category_id, :photo)
   end
 end
