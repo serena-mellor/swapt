@@ -13,6 +13,12 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     @item = Item.new
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path
+  end
+
   def create
     @item = Item.new(items_params)
     @item.user = current_user
@@ -23,6 +29,11 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     end
   end
 
+  def update
+    @item = Item.find(params[:id])
+    @item.update(items_params)
+    redirect_to items_path
+  end
   private
 
   def items_params
