@@ -1,0 +1,31 @@
+.dropdown-toggle::after {
+  content: none;
+}
+
+.btn-transparent {
+  &.show, &.btn-transparent:active, &.btn-check:checked, :not(.btn-check) {
+    border: none;
+    margin-right: 0px;
+  }
+}
+
+.right-aligned-hamburger {
+  display: flex;
+  justify-content: right;
+  padding-top: 20px;
+
+  i {
+    font-size: 26px;
+  }
+}
+
+.wide-menu-links {
+  border-radius: 15px;
+  row-gap: 10px;
+}
+
+.hamburger-link {
+  font-family: 'Poppins', 'sans-serif';
+  // width: 250px;
+
+}
