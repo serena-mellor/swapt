@@ -23,12 +23,39 @@ sandra = User.create!(username: "sandra", first_name: "Sandra", last_name: "Luuk
 
 puts "Creating categories"
 shoes = Category.create!(title: "Shoes")
+shoes_image = URI.open("https://images.unsplash.com/photo-1565814636199-ae8133055c1c?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+shoes.photo.attach(io: shoes_image, filename: "image/shoes")
+shoes.save
+
 shirts = Category.create!(title: "Shirts")
+shirts_image = URI.open("https://images.unsplash.com/photo-1565814636199-ae8133055c1c?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+shirts.photo.attach(io: shirts_image, filename: "image/shirts")
+shirts.save
+
 dresses = Category.create!(title: "Dresses")
+dresses_image = URI.open("https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+dresses.photo.attach(io: dresses_image, filename: "image/dresses")
+dresses.save
+
 trousers = Category.create!(title: "Trousers")
+trousers_image = URI.open("https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+trousers.photo.attach(io: trousers_image, filename: "image/trousers")
+trousers.save
+
 accessories = Category.create!(title: "Accessories")
+accessories_image = URI.open("https://images.pexels.com/photos/1453008/pexels-photo-1453008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+accessories.photo.attach(io: accessories_image, filename: "image/accessories")
+accessories.save
+
 jackets = Category.create!(title: "Jackets")
+jackets_image = URI.open("https://images.pexels.com/photos/16170/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+jackets.photo.attach(io: jackets_image, filename: "image/jackets")
+jackets.save
+
 knitwear = Category.create!(title: "Knitwear")
+knitwear_image = URI.open("https://images.pexels.com/photos/6630834/pexels-photo-6630834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+knitwear.photo.attach(io: knitwear_image, filename: "image/knitwear")
+knitwear.save
 
 puts "Creating items"
 

@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   resources :outfits
 
   get '/profile/:id', to: 'users#profile'
+  
+  resources :categories, only: :index
 end

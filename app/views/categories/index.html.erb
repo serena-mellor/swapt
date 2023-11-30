@@ -1,0 +1,12 @@
+  <section class="container-fluid" class="categories">
+    <div class="row">
+      <% Category.all.each do |category| %>
+
+        <%= link_to items_path(category: category.title), class:"sm-lg-12 d-block" do %>
+            <div class="category-card">
+            <p class="category-names"><%= category.title %></p>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+  </section>
