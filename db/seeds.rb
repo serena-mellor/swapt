@@ -38,7 +38,7 @@ silver_dress.photo.attach(io: silver_dress_image, filename: "image/silver_dress"
 silver_dress.save
 
 floral_dress_image = URI.open("https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F05%2F38%2F0538e7e1bfc64212f3cc49dc1f290910b6ea9f70.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/fullscreen]")
-floral_dress = Item.new(title: "Floral Summer Dress", description: "Light and breezy for a perfect summer day.", user: serena, category: dresses)
+floral_dress = Item.new(title: "Floral Summer Dress", description: "Light and breezy for a perfect summer day.", user: sandra, category: dresses)
 floral_dress.photo.attach(io: floral_dress_image, filename: "image/floral_dress")
 floral_dress.save
 
@@ -53,7 +53,7 @@ striped_tee.photo.attach(io: striped_tee_image, filename: "image/striped_tee")
 striped_tee.save
 
 denim_shirt_image = URI.open("https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F79%2F47%2F794720afe7244f2e40ff0084594ba89e4b94efe4.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_shirtsblouses_shirts%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/fullscreen]")
-denim_shirt = Item.new(title: "Denim Chambray Shirt", description: "A versatile denim shirt for a laid-back look.", user: serena, category: shirts)
+denim_shirt = Item.new(title: "Denim Chambray Shirt", description: "A versatile denim shirt for a laid-back look.", swappable: true, user: camilla, category: shirts)
 denim_shirt.photo.attach(io: denim_shirt_image, filename: "image/denim_shirt")
 denim_shirt.save
 
@@ -63,17 +63,17 @@ black_jacket.photo.attach(io: black_jacket_image, filename: "image/black_jacket"
 black_jacket.save
 
 hawaiian_shirt_image = URI.open("https://img01.ztat.net/article/spp-media-p1/7995803d327e4451bf09cf59507ac2b8/1f9b3649ce1d48b2ab1d8679f57889c3.jpg?imwidth=762&filter=packshot")
-hawaiian_shirt = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", user: gavin, category: shirts)
+hawaiian_shirt = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", user: camilla, category: shirts)
 hawaiian_shirt.photo.attach(io: hawaiian_shirt_image, filename: "image/hawaiian_shirt")
 hawaiian_shirt.save
 
 long_sleeve_image = URI.open("https://img.hollisterco.com/is/image/anf/KIC_339-2670-1153-400_prod1.jpg?policy=product-extra-large")
-long_sleeve = Item.new(title: "Long Sleeve Henley", description: "Casual and cool with a laid-back vibe.", user: sandra, category: shirts)
+long_sleeve = Item.new(title: "Long Sleeve Henley", description: "Casual and cool with a laid-back vibe.",swappable: true, user: sandra, category: shirts)
 long_sleeve.photo.attach(io: long_sleeve_image, filename: "image/long_sleeve")
 long_sleeve.save
 
 wide_leg_image = URI.open("https://img01.ztat.net/article/spp-media-p1/2a83622658c84c31b4933b4bd4c1e33c/837c4c4c076f4b51a68ba813d76ed5ba.jpg?imwidth=762&filter=packshot")
-wide_leg = Item.new(title: "Wide Leg Trousers", description: "Make a statement with these fashionable wide-leg trousers.", user: gavin, category: trousers)
+wide_leg = Item.new(title: "Wide Leg Trousers", description: "Make a statement with these fashionable wide-leg trousers.", user: sandra, category: trousers)
 wide_leg.photo.attach(io: wide_leg_image, filename: "image/wide_leg")
 wide_leg.save
 
@@ -83,7 +83,7 @@ leggings.photo.attach(io: leggings_image, filename: "image/leggings")
 leggings.save
 
 culottes_image = URI.open("https://pix.bonprix.es/imgc/0/0/2/3/1/2/5/1/7/2/_640/23125172/pantalon-culotte-de-pana-elastica-con-cintura-comoda-largo-7-8-verde-oliva-oscuro.jpg")
-culottes = Item.new(title: "Cropped Culottes", description: "Stay on-trend with these chic and comfortable culottes.", user: camilla, category: trousers)
+culottes = Item.new(title: "Cropped Culottes", description: "Stay on-trend with these chic and comfortable culottes.", swappable: true, user: camilla, category: trousers)
 culottes.photo.attach(io: culottes_image, filename: "image/culottes")
 culottes.save
 
@@ -108,7 +108,7 @@ chinos.photo.attach(io: chinos_image, filename: "image/chinos")
 chinos.save
 
 sneakers_image = URI.open("https://cdn.deporvillage.com/cdn-cgi/image/h=1800,w=1800,dpr=1,f=auto,q=75,fit=contain,background=white/product/nb-wl574evw_003.jpg")
-sneakers = Item.new(title: "Classic Sneakers", description: "Versatile and comfortable for everyday wear.", user: sandra, category: shoes)
+sneakers = Item.new(title: "Classic Sneakers", description: "Versatile and comfortable for everyday wear.",swappable: true, user: sandra, category: shoes)
 sneakers.photo.attach(io: sneakers_image, filename: "image/sneakers")
 sneakers.save
 
@@ -123,27 +123,27 @@ slip_ons.photo.attach(io: slip_ons_image, filename: "image/slip-ons")
 slip_ons.save
 
 high_heels_image = URI.open("https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F3e%2F30%2F3e30e8288d545ea19459118f4ba11dd7f3161fd5.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D")
-high_heels = Item.new(title: "High Heel Pumps", description: "Black essentials in every girls closets", user: gavin, category: shoes)
+high_heels = Item.new(title: "High Heel Pumps", description: "Black essentials in every girls closets",swappable: true, user: sandra, category: shoes)
 high_heels.photo.attach(io: high_heels_image, filename: "image/high_heels")
 high_heels.save
 
 boots_image = URI.open("https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fcb%2F74%2Fcb744c7a268f06c1aa80108cd1fcc215cbe206e2.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_shoes_ankle_boots%5D%2Ctype%5BDESCRIPTIVEDETAIL%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/fullscreen]")
-boots = Item.new(title: "Fashionable Boots", description: "Stay on-trend with these stylish and comfortable boots.", user: camilla, category: shoes)
+boots = Item.new(title: "Fashionable Boots", description: "Stay on-trend with these stylish and comfortable boots.", swappable: true,user: camilla, category: shoes)
 boots.photo.attach(io: boots_image, filename: "image/boots")
 boots.save
 
 oxford_shoes_image = URI.open("https://img01.ztat.net/article/spp-media-p1/bb0c339377083ddb81504e5d266f862a/93c9f18181d24bcf881a64569d23a99a.jpg?imwidth=1800")
-oxford_shoes = Item.new(title: "Classic Oxford Shoes", description: "Timeless elegance for a polished look.", user: gavin, category: shoes)
+oxford_shoes = Item.new(title: "Classic Oxford Shoes", description: "Timeless elegance for a polished look.",swappable: true, user: camilla, category: shoes)
 oxford_shoes.photo.attach(io: oxford_shoes_image, filename: "image/oxford_shoes")
 oxford_shoes.save
 
 jeans_image = URI.open("https://static.pullandbear.net/2/photos//2023/I/0/1/p/7686/331/427/7686331427_2_6_8.jpg?t=1687963466135&imwidth=1024")
-jeans = Item.new(title: "Slim Fit Jeans", description: "A classic staple for casual and versatile outfits.", user: sandra, category: trousers)
+jeans = Item.new(title: "Slim Fit Jeans", description: "A classic staple for casual and versatile outfits.",swappable: true, user: sandra, category: trousers)
 jeans.photo.attach(io: jeans_image, filename: "image/jeans")
 jeans.save
 
 green_sweater_image = URI.open("https://pix.bonprix.es/imgc/0/0/2/1/2/2/9/4/0/4/_640/21229404/jersey-con-cremallera-caqui-oscuro.jpg")
-green_sweater = Item.new(title: "Zip-up sweater", description: "Stay cozy and on-trend with a classic zip-up sweater.", user: camilla, category: knitwear)
+green_sweater = Item.new(title: "Zip-up sweater", description: "Stay cozy and on-trend with a classic zip-up sweater.",swappable: true, user: camilla, category: knitwear)
 green_sweater.photo.attach(io: green_sweater_image, filename: "image/green_sweater")
 green_sweater.save
 
@@ -153,12 +153,12 @@ white_sweater.photo.attach(io: white_sweater_image, filename: "image/white_sweat
 white_sweater.save
 
 linen_image = URI.open("https://imgproxy.oascompany.com/imgproxy/resize:fit/width:1280/quality:90/aHR0cHM6Ly9vYXMuY2VudHJhY2RuLm5ldC9jbGllbnQvZHluYW1pYy9pbWFnZXMvMzUxXzAzZjIzNzcxZTYtYXJteS1jdWJhLXRlcnJ5LXNoaXJ0LTcwMDMtMzctYS1vcmlnaW5hbC5qcGc=.jpg")
-linen = Item.new(title: "Linen Short Sleeve Shirt", description: "Perfect for warm weather with a breathable linen fabric.", user: gavin, category: shirts)
+linen = Item.new(title: "Linen Short Sleeve Shirt", description: "Perfect for warm weather with a breathable linen fabric.", swappable: true, user: camilla, category: shirts)
 linen.photo.attach(io: linen_image, filename: "image/linen")
 linen.save
 
 crossbody_bag_image = URI.open("https://asset1.cxnmarksandspencer.com/is/image/mands/Faux-Leather-Cross-Body-Bag/SD_01_T01_9846C_Y0_X_EC_90?$PDP_IMAGEGRID_ZOOM_LG$")
-crossbody_bag = Item.new(title: "Chic Crossbody Bag", description: "A stylish and convenient accessory for on-the-go.", user: camilla, category: accessories)
+crossbody_bag = Item.new(title: "Chic Crossbody Bag", description: "A stylish and convenient accessory for on-the-go.",swappable: true, user: camilla, category: accessories)
 crossbody_bag.photo.attach(io: crossbody_bag_image, filename: "image/crossbody_bag")
 crossbody_bag.save
 
