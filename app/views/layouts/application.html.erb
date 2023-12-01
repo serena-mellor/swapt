@@ -13,6 +13,9 @@
   <body style="<%= background_colour(params) %>">
     <%= yield %>
     <%= render "shared/flashes" %>
-    <%= render "shared/navbar" %>
+
+    <% unless controller_name=="pages"%>
+      <%= render "shared/navbar" %>
+    <% end %>
   </body>
 </html>

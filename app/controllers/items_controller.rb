@@ -6,7 +6,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def index
-    @items = Item.where(swappable: true)
+    @items = Item.where(swappable: true).where.not(user: current_user)
   end
 
   def new
