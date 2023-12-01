@@ -5,12 +5,10 @@
 
   <ul class="dropdown-menu wide-menu-options" aria-labelledby="dropdownMenuLink">
     <li><a class="dropdown-item hamburger-link" href="#">My profile</a></li>
+    <%# <%= link_to "My profile",  %>
     <li><a class="dropdown-item hamburger-link" href="#">My outfits</a></li>
-    <li><a class="dropdown-item hamburger-link" href="#">Swap requests</a></li>
-    <li><a class="dropdown-item hamburger-link" href="#">Received swaps</a></li>
-    <li><a class="dropdown-item hamburger-link" href="#">Sign out</a></li>
+    <%= link_to "Swap requests", swaps_path, class:"dropdown-item hamburger-link" %>
+    <%= link_to "Received swaps", received_swaps_path, class:"dropdown-item hamburger-link" %>
+    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class:"dropdown-item hamburger-link" %>
   </ul>
 </div>
-
-<%# link_to "Swap reguests", swaps_path
-link_to "Received swaps", received_swaps_path %>
