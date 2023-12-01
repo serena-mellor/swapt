@@ -1,7 +1,14 @@
   <div class="profile-container">
-    <div class="profile-picture">
-      <img src="path/to/profile-image.jpg" alt="Profile Image">
-    </div>
-    <button class="profile-button">Edit Profile</button>
-    <%= current_user.first_name %>
+  <div class="profile-picture">
+    <img src="<%= image_path('averie-woodard-4nulm-JUYFo-unsplash.jpg') %>" alt="Profile Image">
   </div>
+    <div class="profile-details">
+      <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+      <p><%= current_user.email %></p>
+      <p> Barcelona</p>
+    </div>
+
+  <div class="profile-info">
+    <button class="btn-swap-history">Swap History</button>
+  </div>
+</div>
