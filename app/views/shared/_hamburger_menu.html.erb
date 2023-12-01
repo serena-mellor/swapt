@@ -4,8 +4,7 @@
   </a>
 
   <ul class="dropdown-menu wide-menu-options" aria-labelledby="dropdownMenuLink">
-    <li><a class="dropdown-item hamburger-link" href="#">My profile</a></li>
-    <%# <%= link_to "My profile",  %>
+    <%= link_to "My profile", profile_path(current_user), class:"dropdown-item hamburger-link" %>
     <li><a class="dropdown-item hamburger-link" href="#">My outfits</a></li>
     <%= link_to "Swap requests", swaps_path, class:"dropdown-item hamburger-link" %>
     <%= link_to "Received swaps", received_swaps_path, class:"dropdown-item hamburger-link" %>
