@@ -1,7 +1,9 @@
 <div class="container swaps">
-  <h3 class= "title">My received swaps</h3>
+  <%= render "shared/hamburger_menu" %>
+  <h3 class= "swap-title">My received swaps</h3>
   <%  @swaps_received.each do |swap| %>
-    <div class= "d-flex swap-card">
+  <div class="swap-card">
+    <div class= "d-flex card-top">
       <div class= "col-6 p-2">
         <%= render "items/item", item: swap.requested_item, full_width: true %>
        <p><%= link_to swap.sender.username, closet_path(swap.sender), class: 'owned-by-link' %> has requested this item</p>
@@ -13,9 +15,14 @@
       </div>
       <% else %>
       <div class="col-6 p-2 pending">
-            <%= link_to "Cancel", item_swap_path(swap.requested_item, swap, {status: "denied"}), data: {turbo_method: :patch}, class:"btn-green" %>
+            <h3 class="swap-pending">Swap pending</h3>
       </div>
       <% end %>
+    </div>
+      <div class="d-flex links">
+              <%= link_to "Swap", closet_path(swap.sender), class:"btn-cancel" %>
+              <%= link_to "Cancel", item_swap_path(swap.requested_item, swap, {status: "denied"}), data: {turbo_method: :patch}, class:"btn-cancel" %>
+            </div>
     </div>
     <% end %>
 </div>
