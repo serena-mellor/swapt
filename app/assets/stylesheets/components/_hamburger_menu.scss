@@ -2,11 +2,11 @@
   content: none;
 }
 
+
 .btn-transparent {
-  &.show, &.btn-transparent:active, &.btn-check:checked, :not(.btn-check) {
-    border: none;
+    border: none !important;
     margin-right: 0px;
-  }
+    border-color: transparent !important;
 }
 
 .right-aligned-hamburger {
@@ -19,7 +19,7 @@
   }
 }
 
-.wide-menu-links {
+.wide-menu-options {
   border-radius: 15px;
   row-gap: 10px;
 }
