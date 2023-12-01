@@ -4,11 +4,11 @@
 
 <!-- Navbar -->
 <nav class="bottom-navbar">
-  <%= link_to root_path, class: "navbar-item" do %>
+  <%= link_to home_path, class: "navbar-item" do %>
     <i class="fas fa-home"></i>
   <% end %>
 
-  <%= link_to items_path, class: "navbar-item" do %>
+  <%= link_to my_closet_path, class: "navbar-item" do %>
     <i class="fa-solid fa-shirt"></i>
   <% end %>
 
@@ -16,7 +16,7 @@
     <i class="fa-solid fa-person-dress"></i>
   <% end %>
 
-  <%= link_to swaps_path, class: "navbar-item" do %>
+  <%= link_to items_path, class: "navbar-item" do %>
     <i class="fa-solid fa-rotate"></i>
   <% end %>
 </nav>
