@@ -13,10 +13,16 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
 
   resources :items do
-    resources :swaps, only: [:create]
+    resources :swaps, only: [:create, :update]
   end
 
-  get '/my_closet', to: 'users#closet'
+  resources :swaps, only: [:show, :index]
+
+  get '/received_swaps', to: 'swaps#received_swaps'
+
+  get '/my_closet', to: 'users#my_closet'
+
+  get '/closet/:user_id', to: 'users#closet', as: :closet
 
   resources :outfits
 
