@@ -1,7 +1,9 @@
 
 
 <div class="back-arrow">
-  <i class="fa-solid fa-arrow-left"></i>
+  <%= link_to items_path do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
 </div>
 <section class="image-body">
     <% source = @item.photo.attached? ? cl_image_path(@item.photo.key) : "https://media.istockphoto.com/id/1257563298/photo/fashion-clothes-on-a-rack-in-a-light-background-indoors-place-for-text.jpg?s=612x612&w=0&k=20&c=UTL3KlMvLkteLe_9l3QbMklBcyaKQM5j6mcDxxtTr4Y="%>
