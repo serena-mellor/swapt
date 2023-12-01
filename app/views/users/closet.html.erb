@@ -1,6 +1,8 @@
 <div class="container">
   <%= render "shared/hamburger_menu" %>
   <h2 class="header-items">My Closet</h2>
+  <div class="upload-btn-container">
+  <%= link_to "Upload item", new_item_path, class:"btn-green-small" %>
+  </div>
   <%= render "items/items_list", items: @items %>
-  
 </div>
