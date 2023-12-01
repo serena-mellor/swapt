@@ -1,11 +1,11 @@
 class SwapsController < ApplicationController
 
   def index
-    @swaps_requested = Swap.all.where(sender: current_user)
+    @swaps_requested = Swap.all.where(sender: current_user).select {|swap| swap.status == "pending"}
   end
 
   def received_swaps
-    @swaps_received = Swap.all.where(receiver: current_user)
+    @swaps_received = Swap.all.where(receiver: current_user).select {|swap| swap.status == "pending"}
   end
 
   def create
@@ -24,13 +24,18 @@ class SwapsController < ApplicationController
   def update
     @item = Item.find(params[:item_id])
     swap = Swap.find(params[:id])
-    swap.update(second_item: @item)
+    if params[:status]
+      swap.update(status: "denied")
+      redirect_to received_swaps_path, notice: "Swap has been cancelled"
+    else
+      swap.update(second_item: @item)
 
-    swap.requested_item.update(user: swap.sender)
-    swap.second_item.update(user: swap.receiver)
+      swap.requested_item.update(user: swap.sender)
+      swap.second_item.update(user: swap.receiver)
 
-    swap.accepted!
+      swap.accepted!
 
-    redirect_to items_path
+      redirect_to items_path
+    end
   end
 end

@@ -13,9 +13,7 @@
   <div class="card-description">
     <h2 class="item-title"><%= @item.title %></h2>
     <p class="item-description"><%= @item.description %></p>
-    <% if @item.user == current_user %>
-      <p class="owned-by-text">Owned by <%= link_to @item.user.username, root_path, class: 'owned-by-link' %></p>
-    <% end %>
+    <p class="owned-by-text">Owned by <%= link_to @item.user.username, root_path, class: 'owned-by-link' %></p>
   </div>
 
 <section>
@@ -31,7 +29,11 @@
           </div>
       <% end %>
     <% else %>
-      <%= link_to "SWAP", root_path, class: "btn-green" %>
+      <%  if swap = Swap.find_by(receiver: current_user, sender: @item.user, status: :pending) %>
+        <%= link_to "SWAP", item_swap_path(@item, swap), data: {turbo_method: :patch}, class:"btn-green" %>
+        <% else %>
+      <%= button_to "SWAP", item_swaps_path(@item), class:"btn-green" %>
+      <% end %>
     <% end %>
   </div>
 </section>

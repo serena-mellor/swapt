@@ -4,21 +4,19 @@
   <div class="swap-card">
         <%= swap.id %>
     <div class= "d-flex">
-      <div class="col-6">
+      <div class="col-6 p-2">
         <%= render "items/item", item: swap.requested_item, full_width: true %>
-        <p>I've requested this from <%= swap.receiver.username %></p>
-
+        <p>I've requested this from <%= link_to swap.receiver.username, closet_path(swap.receiver), class: 'owned-by-link' %></p>
       </div>
-        <->
+      <div class="align-self-center"> <i class="fa fa-exchange" aria-hidden="true"></i></div>
       <% if swap.second_item.present? %>
-      <div class="col-6">
+      <div class="col-6 p-2">
         <%= render "items/item", item: swap.second_item, full_width: true %>
-        <p><%= swap.receiver.username %> has requested this item from me</p>
       </div>
       <% else %>
-      <div>
-      <%= swap.status  %>
-
+      <div class="col-6">
+        <%= image_tag "pending.jpg", alt: "Swap pending", width: 200 %>
+        <%= swap.status  %>
       </div>
       <% end %>
     </div>
