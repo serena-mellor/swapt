@@ -4,17 +4,19 @@
 
 <!-- Navbar -->
 <nav class="bottom-navbar">
-  <a href="#" class="navbar-item">
+  <%= link_to root_path, class: "navbar-item" do %>
     <i class="fas fa-home"></i>
-  </a>
-  <a href="#" class="navbar-item">
-    <i class="fa-solid fa-vest-patches"></i>
-  </a>
-  <a href="#" class="navbar-item">
-  <i class="fa-solid fa-eye"></i>
+  <% end %>
 
-  </a>
-  <a href="#" class="navbar-item">
+  <%= link_to items_path, class: "navbar-item" do %>
+    <i class="fa-solid fa-shirt"></i>
+  <% end %>
+
+  <%= link_to "#", class: "navbar-item" do %>
+    <i class="fa-solid fa-person-dress"></i>
+  <% end %>
+
+  <%= link_to swaps_path, class: "navbar-item" do %>
     <i class="fa-solid fa-rotate"></i>
-  </a>
+  <% end %>
 </nav>
