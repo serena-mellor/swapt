@@ -30,6 +30,7 @@ gem "devise"
 
 gem "dotenv-rails"
 gem "cloudinary"
+gem "pg_search"
 
 
 

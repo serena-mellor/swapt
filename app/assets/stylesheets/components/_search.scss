@@ -1,0 +1,37 @@
+.search-icon {
+  text-align: right;
+  margin-right: 10px ;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.magnifying-glass-container {
+  text-align: right;
+}
+
+.search-form input[type="text"] {
+  border-radius: 20px;
+  min-width: 300px;
+  max-width: fit-content;
+  margin: auto;
+}
+// .search-form button[type="submit"] {
+//   border-radius: 20px;
+//   color: #798478;
+//   width: fit-content;
+//   margin: auto;
+// }
+
+input[type="submit" i] {
+  border-radius: 15px;
+  background-color: #798478;
+  width: 80;
+  padding: 7px;
+  margin: auto;
+  color: white;
+  font-weight: 300;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  font-size: 12px;
+}

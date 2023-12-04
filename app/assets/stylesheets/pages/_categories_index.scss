@@ -11,7 +11,7 @@
   border-radius: 6px;
   border: 2px solid #D4C2D6;
   box-shadow: 0px 0px 7px rgba(10, 10, 10, 0.152);
-  padding-bottom: 30%;
+  padding-block: 20%;
 }
 
 .category-card::before {
@@ -47,6 +47,9 @@
   flex-direction: column;
   gap: 5px;
   margin-bottom: 60px;
+  a {
+    text-decoration: none;
+  }
 }
 
 .category-names {

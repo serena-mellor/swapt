@@ -8,10 +8,13 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @items = Item.where(swappable: true)
 
-    if params[:category_id].present?
-      @items = Item.where(category_id: params[:category_id])
-    else
-      @items = Item.all
+    @items = @items.where(category_id: params[:category_id]) if params[:category_id].present?
+
+    @items = @items.search_by_title_and_description(params[:query]) if params[:query].present?
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "items_list", locals: {items: @items}, formats: [:html] }
     end
   end
 
@@ -39,6 +42,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     @item = Item.find(params[:id])
     @item.update(items_params)
     redirect_to items_path
+
   end
   private
 
