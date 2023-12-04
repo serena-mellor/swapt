@@ -1,0 +1,25 @@
+.btn-chatroom {
+  color: white;
+  border-radius: 12px;
+  background-color: #798478;
+  text-decoration: none;
+  border-style: solid;
+  border-color: #6e7a6d;
+  font-size: 14px;
+  text-align: center;
+  height: 38px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container-chatroom{
+  margin-bottom: 50px;
+  padding: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.messages{
+  height: 80vh;
+  overflow-y: scroll;
+}
