@@ -1,19 +1,22 @@
 .search-icon {
   text-align: right;
-  margin-right: 10px ;
-  font-size: 20px;
-  margin-top: 10px;
+  font-size: 24px;
 }
 
 .magnifying-glass-container {
   text-align: right;
+  margin-bottom: 40px;
 }
 
 .search-form input[type="text"] {
   border-radius: 20px;
-  min-width: 300px;
   max-width: fit-content;
   margin: auto;
+  background-image: url("assets/images/magnifying-icon.png");
+  background-repeat: no-repeat;
+  background-size: 20px;
+
+
 }
 // .search-form button[type="submit"] {
 //   border-radius: 20px;
@@ -22,16 +25,20 @@
 //   margin: auto;
 // }
 
-input[type="submit" i] {
-  border-radius: 15px;
+.search-button {
+  border-radius: 50%;
+
   background-color: #798478;
-  width: 80;
-  padding: 7px;
   margin: auto;
   color: white;
   font-weight: 300;
   border: none;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 2px;
-  font-size: 12px;
+  font-size: 24px;
+}
+
+.button-container {
+  width: 100vw;
+  height: 40px;
 }
