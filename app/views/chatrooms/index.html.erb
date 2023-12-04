@@ -1,0 +1,23 @@
+<div class="container-chatrooms1">
+  <%= render "shared/hamburger_menu" %>
+  <h1 class="chatroom-h1">MY CHATS</h1>
+<div class="row p-3">
+    <% @chatrooms.each do |chat| %>
+        <%= link_to chatroom_path(chat) do %>
+
+<div class="card-product">
+     <%= cl_image_tag  chat.swap.requested_item.photo.key, class:"avatar"%>
+  <div class="card-product-infos">
+    <h2>Swap number: <%= chat.swap_id %></h2>
+    <p><%if chat.messages.any? %>
+      -<%= chat.messages.last.content %>
+      <% else %>
+      No messages, start chatting!
+      <% end %></p>
+     <% end %>
+
+  </div>
+</div>
+    <%end %>
+</div>
+</div>

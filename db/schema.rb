@@ -48,6 +48,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_121341) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.bigint "swap_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["swap_id"], name: "index_chatrooms_on_swap_id"
+  end
+
   create_table "follows", force: :cascade do |t|
     t.bigint "follower_id"
     t.bigint "followee_id"
@@ -67,6 +74,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_121341) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "outfit_items", force: :cascade do |t|
@@ -118,10 +135,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_121341) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatrooms", "swaps"
   add_foreign_key "follows", "users", column: "followee_id"
   add_foreign_key "follows", "users", column: "follower_id"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "outfit_items", "items"
   add_foreign_key "outfit_items", "outfits"
   add_foreign_key "outfits", "users"

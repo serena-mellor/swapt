@@ -58,7 +58,7 @@ denim_shirt.photo.attach(io: denim_shirt_image, filename: "image/denim_shirt")
 denim_shirt.save
 
 black_jacket_image = URI.open("https://img01.ztat.net/article/spp-media-p1/76fd75dc1dc94f48898db3dd6d5ae882/b4b816d0a2a34bb4a447dee5bdcee1bb.jpg?imwidth=1800&filter=packshot")
-black_jacket = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", user: gavin, category: jackets)
+black_jacket = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", swappable: true, user: gavin, category: jackets)
 black_jacket.photo.attach(io: black_jacket_image, filename: "image/black_jacket")
 black_jacket.save
 
