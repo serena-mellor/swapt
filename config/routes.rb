@@ -32,3 +32,9 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 end
+
+# resources :items do
+#   collection do
+#     get 'search'
+#   end
+# end
