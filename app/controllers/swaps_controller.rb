@@ -34,8 +34,9 @@ class SwapsController < ApplicationController
       swap.second_item.update(user: swap.receiver)
 
       swap.accepted!
+      chat = Chatroom.create!(swap: swap)
 
-      redirect_to items_path
+      redirect_to chatroom_path(chat)
     end
   end
 end

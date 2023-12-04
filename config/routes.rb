@@ -27,4 +27,8 @@ Rails.application.routes.draw do
   resources :outfits
 
   get '/profile/:id', to: 'users#profile', as: :profile
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end

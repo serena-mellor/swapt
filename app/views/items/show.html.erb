@@ -30,7 +30,7 @@
       <% end %>
     <% else %>
       <%  if swap = Swap.find_by(receiver: current_user, sender: @item.user, status: :pending) %>
-        <%= link_to "SWAP", item_swap_path(@item, swap), data: {turbo_method: :patch}, class:"btn-green" %>
+        <%= link_to "Accept swap", item_swap_path(@item, swap), data: {turbo_method: :patch}, class:"btn-green" %>
         <% else %>
       <%= button_to "SWAP", item_swaps_path(@item), class:"btn-green" %>
       <% end %>
