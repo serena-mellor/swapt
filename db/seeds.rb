@@ -28,7 +28,7 @@ shoes.photo.attach(io: shoes_image, filename: "image/shoes")
 shoes.save
 
 shirts = Category.create!(title: "Shirts")
-shirts_image = URI.open("https://images.unsplash.com/photo-1565814636199-ae8133055c1c?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+shirts_image = URI.open("https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 shirts.photo.attach(io: shirts_image, filename: "image/shirts")
 shirts.save
 
