@@ -6,8 +6,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def index
-    @items = Item.where(swappable: true)
-
     @items = @items.where(category_id: params[:category_id]) if params[:category_id].present?
 
     @items = @items.search_by_title_and_description(params[:query]) if params[:query].present?
@@ -16,6 +14,8 @@ skip_before_action :authenticate_user!, only: [:index, :show]
       format.html # Follow regular flow of Rails
       format.text { render partial: "items_list", locals: {items: @items}, formats: [:html] }
     end
+    
+    @items = Item.where(swappable: true).where.not(user: current_user)
   end
 
   def new
