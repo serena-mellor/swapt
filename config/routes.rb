@@ -28,3 +28,9 @@ Rails.application.routes.draw do
 
   get '/profile/:id', to: 'users#profile', as: :profile
 end
+
+# resources :items do
+#   collection do
+#     get 'search'
+#   end
+# end
