@@ -19,10 +19,53 @@ Outfit.destroy_all
 User.destroy_all
 
 puts "Creating users"
-camilla = User.create!(username: "camilla", first_name: "Camilla", last_name: "Ligovic", password: "123456", email: "camilla.ligovic@gmail.com")
-gavin = User.create!(username: "gavin", first_name: "Gavin", last_name: "Wotton", password: "abcdef", email: "gavin.wotton@gmail.com")
-serena = User.create!(username: "serena", first_name: "Serena", last_name: "Mellor", password: "234567", email: "serena@gmail.com")
-sandra = User.create!(username: "sandra", first_name: "Sandra", last_name: "Luukas", password: "654321", email: "sandra@gmail.com")
+camilla = User.create!(
+  username: "camilla",
+  first_name: "Camilla",
+  last_name: "Ligovic",
+  password: "123456",
+  email: "camilla.ligovic@gmail.com",
+  street: "Pl. del Diamant, 9",
+  city: "Barcelona",
+  state: "08012",
+  country: "Spain"
+)
+
+gavin = User.create!(
+  username: "gavin",
+  first_name: "Gavin",
+  last_name: "Wotton",
+  password: "abcdef",
+  email: "gavin.wotton@gmail.com",
+  street: "Av. Diagonal, 579",
+  city: "Barcelona",
+  state: "08029",
+  country: "Spain"
+)
+
+serena = User.create!(
+  username: "serena",
+  first_name: "Serena",
+  last_name: "Mellor",
+  password: "234567",
+  email: "serena@gmail.com",
+  street: "Pg. de Gràcia, 33",
+  city: "Barcelona",
+  state: "08007",
+  country: "Spain"
+)
+
+sandra = User.create!(
+  username: "sandra",
+  first_name: "Sandra",
+  last_name: "Luukas",
+  password: "654321",
+  email: "sandra@gmail.com",
+  street: "C/ de Ferlandina, 20",
+  city: "Barcelona",
+  state: "08001",
+  country: "Spain"
+)
 
 puts "Creating categories"
 shoes = Category.create!(title: "Shoes", position: "Bottom")
@@ -147,12 +190,12 @@ jeans.photo.attach(io: jeans_image, filename: "image/jeans")
 jeans.save
 
 green_sweater_image = URI.open("https://pix.bonprix.es/imgc/0/0/2/1/2/2/9/4/0/4/_640/21229404/jersey-con-cremallera-caqui-oscuro.jpg")
-green_sweater = Item.new(title: "Zip-up sweater", description: "Stay cozy and on-trend with a classic zip-up sweater.",swappable: true, user: camilla, category: sweaters)
+green_sweater = Item.new(title: "Zip-up sweater", description: "Stay cozy and on-trend with a classic zip-up sweater.",swappable: true, user: camilla, category: knitwear)
 green_sweater.photo.attach(io: green_sweater_image, filename: "image/green_sweater")
 green_sweater.save
 
 white_sweater_image = URI.open("https://cdn.laredoute.com/products/6/4/c/64c9d720bb0ca3fece5b7f899a6d5c05.jpg?width=1200&dpr=1")
-white_sweater = Item.new(title: "White sweater", description: "A polished choice for a smart-casual look.", user: serena, category: sweaters)
+white_sweater = Item.new(title: "White sweater", description: "A polished choice for a smart-casual look.", user: serena, category: knitwear)
 white_sweater.photo.attach(io: white_sweater_image, filename: "image/white_sweater")
 white_sweater.save
 

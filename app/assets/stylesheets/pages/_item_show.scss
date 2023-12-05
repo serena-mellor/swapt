@@ -32,12 +32,12 @@
 }
 
 .show-image {
-  max-width: 100%;
-
-  height: auto;
+  width: 100%;
+  height: 400px;
   display: block;
   margin: 0 auto;
   border-radius: 25px 25px 25px 0;
+  object-fit: cover;
 }
 .item-image {
   position: relative;
@@ -111,11 +111,10 @@ justify-content:center;
 padding: 15px;
 }
 
-.back-arrow {
-  align-items: left;
-  font-size: 32px;
-  color: rgba(0, 0, 0, 0.405);
-  padding-left: 21px;
-  margin-top: 10px;
-}
-
+// .back-arrow {
+//   align-items: left;
+//   font-size: 32px;
+//   color: rgba(0, 0, 0, 0.405);
+//   padding-left: 21px;
+//   margin-top: 10px;
+// }
