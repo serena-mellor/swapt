@@ -1,7 +1,30 @@
-<div class="container">
-  <%= render "shared/hamburger_menu" %>
-  <h2 class="header-items">Swappable Items</h2>
-  <%= render "items_list", items: @items %>
+<div class="container" data-controller="search-items">
+  <div class="row">
+    <div class="col-10 d-flex justify-content-end">
+      <%= render "shared/search" %>
+    </div>
+    <div class="col-2 d-flex justify-content-end">
+      <%= render "shared/hamburger_menu" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h2 class="header-items">Swappable Items</h2>
+       <div class="d-flex filter-button-row gap-3">
+      <button class="filter-button">Sort</button>
+      <button class="filter-button">Location</button>
+      </div>
+      <%= render "items_list", items: @items %>
+    </div>
+  </div>
 </div>
 
-<%# <%= form_tag(search_items_path, method: :get) do %> %>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  <% raise %>
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<%# <%= form_tag(search_items_path, method: :get) do %>

@@ -21,9 +21,9 @@ Rails.application.routes.draw do
   get '/received_swaps', to: 'swaps#received_swaps'
 
 
-  
+
   resources :categories, only: :index
-  
+
   get '/my_closet', to: 'users#my_closet'
 
   get '/closet/:user_id', to: 'users#closet', as: :closet
@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   # get '/outfitcreation', to: 'outfits#outfit_creation'
 
   get '/profile/:id', to: 'users#profile', as: :profile
+
+  resources :categories, only: :index
 
   resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create

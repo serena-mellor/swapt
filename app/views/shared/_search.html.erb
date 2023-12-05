@@ -1,0 +1,21 @@
+<div>
+  <div class="row justify-content-center" data-controller="toggle-search">
+    <div class="col-sm-8 my-2 magnifying-glass-container">
+      <i class="fa-solid fa-magnifying-glass search-icon" data-toggle-search-target="icon" data-action="click->toggle-search#toggle"></i>
+      <%= form_with url: items_path, method: :get, class: "d-flex d-none search-form", data: { toggle_search_target: "form", search_items_target: "form" } do %>
+        <%= text_field_tag :query,
+          nil,
+          class: "form-control",
+          placeholder: "Choose an item...",
+          data: {
+            search_items_target: "input",
+            action: "keyup->search-items#update"
+          }
+        %>
+        <%= button_tag class: "search-button" do %>
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
