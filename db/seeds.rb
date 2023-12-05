@@ -10,16 +10,62 @@
 require "open-uri"
 
 puts "Cleaning up the database.."
+Message.destroy_all
+Chatroom.destroy_all
+Swap.destroy_all
 Item.destroy_all
 Category.destroy_all
 Outfit.destroy_all
 User.destroy_all
 
 puts "Creating users"
-camilla = User.create!(username: "camilla", first_name: "Camilla", last_name: "Ligovic", password: "123456", email: "camilla.ligovic@gmail.com")
-gavin = User.create!(username: "gavin", first_name: "Gavin", last_name: "Wotton", password: "abcdef", email: "gavin.wotton@gmail.com")
-serena = User.create!(username: "serena", first_name: "Serena", last_name: "Mellor", password: "234567", email: "serena@gmail.com")
-sandra = User.create!(username: "sandra", first_name: "Sandra", last_name: "Luukas", password: "654321", email: "sandra@gmail.com")
+camilla = User.create!(
+  username: "camilla",
+  first_name: "Camilla",
+  last_name: "Ligovic",
+  password: "123456",
+  email: "camilla.ligovic@gmail.com",
+  street: "Pl. del Diamant, 9",
+  city: "Barcelona",
+  state: "08012",
+  country: "Spain"
+)
+
+gavin = User.create!(
+  username: "gavin",
+  first_name: "Gavin",
+  last_name: "Wotton",
+  password: "abcdef",
+  email: "gavin.wotton@gmail.com",
+  street: "Av. Diagonal, 579",
+  city: "Barcelona",
+  state: "08029",
+  country: "Spain"
+)
+
+serena = User.create!(
+  username: "serena",
+  first_name: "Serena",
+  last_name: "Mellor",
+  password: "234567",
+  email: "serena@gmail.com",
+  street: "Pg. de Gràcia, 33",
+  city: "Barcelona",
+  state: "08007",
+  country: "Spain"
+)
+
+sandra = User.create!(
+  username: "sandra",
+  first_name: "Sandra",
+  last_name: "Luukas",
+  password: "654321",
+  email: "sandra@gmail.com",
+  street: "C/ de Ferlandina, 20",
+  city: "Barcelona",
+  state: "08001",
+  country: "Spain"
+)
 
 puts "Creating categories"
 shoes = Category.create!(title: "Shoes", position: :bottom)
@@ -59,7 +105,7 @@ denim_shirt.photo.attach(io: denim_shirt_image, filename: "image/denim_shirt")
 denim_shirt.save
 
 black_jacket_image = URI.open("https://img01.ztat.net/article/spp-media-p1/76fd75dc1dc94f48898db3dd6d5ae882/b4b816d0a2a34bb4a447dee5bdcee1bb.jpg?imwidth=1800&filter=packshot")
-black_jacket = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", swappable: true, user: gavin, category: jackets)
+black_jacket = Item.new(title: "Black Jacket", description: "Trendy black jacket for any occasion.", swappable: true, user: gavin, category: jackets)
 black_jacket.photo.attach(io: black_jacket_image, filename: "image/black_jacket")
 black_jacket.save
 
@@ -78,7 +124,7 @@ wide_leg = Item.new(title: "Wide Leg Trousers", description: "Make a statement w
 wide_leg.photo.attach(io: wide_leg_image, filename: "image/wide_leg")
 wide_leg.save
 
-leggings_image = URI.open("https://www.emp-online.es/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw58d93b15/images/5/3/0/7/530725a.jpg?sfrm=png")
+leggings_image = URI.open("https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/f8954bce717e7f927eab296691b11ced.jpg?imageView2/2/w/800/q/70")
 leggings = Item.new(title: "Athleisure Leggings", description: "Perfect for workouts or casual athleisure style.", user: sandra, category: trousers)
 leggings.photo.attach(io: leggings_image, filename: "image/leggings")
 leggings.save
@@ -144,12 +190,12 @@ jeans.photo.attach(io: jeans_image, filename: "image/jeans")
 jeans.save
 
 green_sweater_image = URI.open("https://pix.bonprix.es/imgc/0/0/2/1/2/2/9/4/0/4/_640/21229404/jersey-con-cremallera-caqui-oscuro.jpg")
-green_sweater = Item.new(title: "Zip-up sweater", description: "Stay cozy and on-trend with a classic zip-up sweater.",swappable: true, user: camilla, category: sweaters)
+green_sweater = Item.new(title: "Zip-up sweater", description: "Stay cozy and on-trend with a classic zip-up sweater.",swappable: true, user: camilla, category: knitwear)
 green_sweater.photo.attach(io: green_sweater_image, filename: "image/green_sweater")
 green_sweater.save
 
 white_sweater_image = URI.open("https://cdn.laredoute.com/products/6/4/c/64c9d720bb0ca3fece5b7f899a6d5c05.jpg?width=1200&dpr=1")
-white_sweater = Item.new(title: "White sweater", description: "A polished choice for a smart-casual look.", user: serena, category: sweaters)
+white_sweater = Item.new(title: "White sweater", description: "A polished choice for a smart-casual look.", user: serena, category: knitwear)
 white_sweater.photo.attach(io: white_sweater_image, filename: "image/white_sweater")
 white_sweater.save
 
@@ -205,3 +251,12 @@ puts "Fake Country: #{country}"
 latitude = Faker::Address.latitude
 longitude = Faker::Address.longitude
 puts "Fake Latitude: #{latitude}, Fake Longitude: #{longitude}"
+
+# # db/seeds.rb
+# 10.times do
+#   Item.create!(
+#     name: Faker::Commerce.product_name,
+#     # Other item attributes...
+#     item_location: Faker::Address.full_address
+#   )
+# end

@@ -6,6 +6,13 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def index
+
+    if params[:category_id].present?
+      @items = Item.where(category_id: params[:category_id])
+    else
+      @items = Item.all
+    end
+    
     @items = Item.where(swappable: true).where.not(user: current_user)
   end
 
