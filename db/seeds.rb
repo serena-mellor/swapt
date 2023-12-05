@@ -59,7 +59,7 @@ denim_shirt.photo.attach(io: denim_shirt_image, filename: "image/denim_shirt")
 denim_shirt.save
 
 black_jacket_image = URI.open("https://img01.ztat.net/article/spp-media-p1/76fd75dc1dc94f48898db3dd6d5ae882/b4b816d0a2a34bb4a447dee5bdcee1bb.jpg?imwidth=1800&filter=packshot")
-black_jacket = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", user: gavin, category: jackets)
+black_jacket = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", swappable: true, user: gavin, category: jackets)
 black_jacket.photo.attach(io: black_jacket_image, filename: "image/black_jacket")
 black_jacket.save
 
@@ -186,3 +186,34 @@ OutfitItem.create!(outfit: beach_day, item: sandals)
 
 
 puts "Created  #{Item.count} items"
+
+
+
+# seeds.rb or any other Ruby file
+require 'faker'
+
+# Generate a random address
+address = Faker::Address.full_address
+puts "Fake Address: #{address}"
+
+# Generate a random city
+city = Faker::Address.city
+puts "Fake City: #{city}"
+
+# Generate a random country
+country = Faker::Address.country
+puts "Fake Country: #{country}"
+
+# Generate a random latitude and longitude
+latitude = Faker::Address.latitude
+longitude = Faker::Address.longitude
+puts "Fake Latitude: #{latitude}, Fake Longitude: #{longitude}"
+
+# db/seeds.rb
+10.times do
+  Item.create!(
+    name: Faker::Commerce.product_name,
+    # Other item attributes...
+    item_location: Faker::Address.full_address
+  )
+end
