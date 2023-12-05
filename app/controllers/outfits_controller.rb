@@ -1,15 +1,15 @@
 class OutfitsController < ApplicationController
   def new
     @outfit = Outfit.new
-    @hats = Item.all.select { |item| item.category.position == "Hat" }
-    @tops = Item.all.select { |item| item.category.position == "Top" }
-    @middles = Item.all.select { |item| item.category.position == "Middle" }
-    @bottoms = Item.all.select { |item| item.category.position == "Bottom" }
+    @hats = Item.all.select { |item| item.category.hat? }
+    @tops = Item.all.select { |item| item.category.top? }
+    @middles = Item.all.select { |item| item.category.middle? }
+    @bottoms = Item.all.select { |item| item.category.bottom? }
   end
 
   def create
     @outfit = Outfit.new(name: params[:outfit][:name])
-    
+
     @outfit.user = current_user
     if @outfit.save
       unless params[:outfit][:hat] == "nil"
@@ -28,11 +28,18 @@ class OutfitsController < ApplicationController
         bottom = Item.find(params[:outfit][:bottom])
         OutfitItem.create(outfit: @outfit, item: bottom) if bottom
       end
+      respond_to do |format|
+        format.html { redirect_to outfit_path(@outfit), status: 302 }
+        format.json
+      end
 
-      redirect_to outfit_path(@outfit)
 
     else
       redirect_to new_outfit_path, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @outfit = Outfit.find(params[:id])
   end
 end

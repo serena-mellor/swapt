@@ -22,14 +22,14 @@ serena = User.create!(username: "serena", first_name: "Serena", last_name: "Mell
 sandra = User.create!(username: "sandra", first_name: "Sandra", last_name: "Luukas", password: "654321", email: "sandra@gmail.com")
 
 puts "Creating categories"
-shoes = Category.create!(title: "Shoes", position: "Bottom")
-shirts = Category.create!(title: "Shirts", position: "Top")
-dresses = Category.create!(title: "Dresses", position: "Dress")
-trousers = Category.create!(title: "Trousers", position: "Middle")
-accessories = Category.create!(title: "Accessories", position: "Accessories")
-jackets = Category.create!(title: "Jackets", position: "Top")
-sweaters = Category.create!(title: "Sweaters", position: "Top")
-hats = Category.create!(title: "Hats", position: "Hat")
+shoes = Category.create!(title: "Shoes", position: :bottom)
+shirts = Category.create!(title: "Shirts", position: :top)
+dresses = Category.create!(title: "Dresses", position: :dress)
+trousers = Category.create!(title: "Trousers", position: :middle)
+accessories = Category.create!(title: "Accessories", position: :accessories)
+jackets = Category.create!(title: "Jackets", position: :top)
+sweaters = Category.create!(title: "Sweaters", position: :top)
+hats = Category.create!(title: "Hats", position: :hat)
 
 puts "Creating items"
 
@@ -184,10 +184,7 @@ OutfitItem.create!(outfit: beach_day, item: hawaiian_shirt )
 OutfitItem.create!(outfit: beach_day, item: shorts )
 OutfitItem.create!(outfit: beach_day, item: sandals)
 
-
 puts "Created  #{Item.count} items"
-
-
 
 # seeds.rb or any other Ruby file
 require 'faker'
@@ -208,12 +205,3 @@ puts "Fake Country: #{country}"
 latitude = Faker::Address.latitude
 longitude = Faker::Address.longitude
 puts "Fake Latitude: #{latitude}, Fake Longitude: #{longitude}"
-
-# db/seeds.rb
-10.times do
-  Item.create!(
-    name: Faker::Commerce.product_name,
-    # Other item attributes...
-    item_location: Faker::Address.full_address
-  )
-end
