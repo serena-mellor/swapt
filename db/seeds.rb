@@ -22,9 +22,8 @@ camilla = User.create!(
   last_name: "Ligovic",
   password: "123456",
   email: "camilla.ligovic@gmail.com",
-  street: "4 Rue des Rosiers",
-  city: "Paris",
-  state: "75004",
+  address: "4 Rue des Rosiers, Paris, France",
+  postcode: "75004",
   country: "France"
 )
 
@@ -34,9 +33,8 @@ gavin = User.create!(
   last_name: "Wotton",
   password: "abcdef",
   email: "gavin.wotton@gmail.com",
-  street: "222 Regent St.",
-  city: "London",
-  state: "W1B 5BD",
+  address: "222 Regent Street, lomndon, United Kingdom",
+  postcode: "W1B 5BD",
   country: "United Kingdom"
 )
 
@@ -46,9 +44,8 @@ serena = User.create!(
   last_name: "Mellor",
   password: "234567",
   email: "serena@gmail.com",
-  street: "Biblioteksgatan 3",
-  city: "Stockholm",
-  state: "111 46",
+  address: "Biblioteksgatan 3, Stockholm, Sweden",
+  postcode: "111 46",
   country: "Sweden"
 )
 
@@ -58,22 +55,53 @@ sandra = User.create!(
   last_name: "Luukas",
   password: "654321",
   email: "sandra@gmail.com",
-  street: "Friedrichstraße 83",
-  city: "Berlin",
-  state: "10117",
+  address: "Friedrichstraße 83, Berlin, Germany",
+  postcode: "10117",
   country: "Germany"
 )
 
 
 puts "Creating categories"
-shoes = Category.create!(title: "Shoes", position: "Bottom")
-shirts = Category.create!(title: "Shirts", position: "Top")
-dresses = Category.create!(title: "Dresses", position: "Dress")
-trousers = Category.create!(title: "Trousers", position: "Middle")
-accessories = Category.create!(title: "Accessories", position: "Accessories")
-jackets = Category.create!(title: "Jackets", position: "Top")
-sweaters = Category.create!(title: "Sweaters", position: "Top")
-hats = Category.create!(title: "Hats", position: "Hat")
+
+shoes = Category.create!(title: "Shoes", position: "bottom")
+shoes_image = URI.open("https://images.unsplash.com/photo-1565814636199-ae8133055c1c?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+shoes.photo.attach(io: shoes_image, filename: "image/shoes")
+shoes.save
+
+shirts = Category.create!(title: "Shirts", position: "top")
+shirts_image = URI.open("https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+shirts.photo.attach(io: shirts_image, filename: "image/shirts")
+shirts.save
+
+dresses = Category.create!(title: "Dresses", position: "dress")
+dresses_image = URI.open("https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+dresses.photo.attach(io: dresses_image, filename: "image/dresses")
+dresses.save
+
+trousers = Category.create!(title: "Trousers", position: "middle")
+trousers_image = URI.open("https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+trousers.photo.attach(io: trousers_image, filename: "image/trousers")
+trousers.save
+
+accessories = Category.create!(title: "Accessories", position: "accessories")
+accessories_image = URI.open("https://images.pexels.com/photos/1453008/pexels-photo-1453008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+accessories.photo.attach(io: accessories_image, filename: "image/accessories")
+accessories.save
+
+jackets = Category.create!(title: "Jackets", position: "top")
+jackets_image = URI.open("https://images.pexels.com/photos/16170/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+jackets.photo.attach(io: jackets_image, filename: "image/jackets")
+jackets.save
+
+knitwear = Category.create!(title: "Knitwear", position: "top")
+knitwear_image = URI.open("https://images.pexels.com/photos/6630834/pexels-photo-6630834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+knitwear.photo.attach(io: knitwear_image, filename: "image/knitwear")
+knitwear.save
+
+hats = Category.create!(title: "Hats", position: "hat")
+hats_image = URI.open("https://images.pexels.com/photos/458649/pexels-photo-458649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+hats.photo.attach(io: hats_image, filename: "image/hats")
+hats.save
 
 puts "Creating items"
 
@@ -252,12 +280,3 @@ puts "Fake Country: #{country}"
 latitude = Faker::Address.latitude
 longitude = Faker::Address.longitude
 puts "Fake Latitude: #{latitude}, Fake Longitude: #{longitude}"
-
-# db/seeds.rb
-10.times do
-  Item.create!(
-    name: Faker::Commerce.product_name,
-    # Other item attributes...
-    item_location: Faker::Address.full_address
-  )
-end

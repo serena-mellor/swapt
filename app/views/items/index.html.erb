@@ -1,4 +1,4 @@
-<div class="container d-none" data-controller="search-items">
+<div class="container" data-controller="search-items">
   <div class="row">
     <div class="col-10 d-flex justify-content-end">
       <%= render "shared/search" %>
@@ -22,7 +22,9 @@
 
 <div style="width: 100%; height: 600px;"
   data-controller="map"
+  <% raise %>
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
-<%# <%= form_tag(search_items_path, method: :get) do %> %>
+<%# <%= form_tag(search_items_path, method: :get) do %>

@@ -14,13 +14,13 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: "items_list", locals: {items: @items}, formats: [:html] }
+      format.text { render partial: 'items_list', locals: { items: @items }, formats: [:html] }
     end
 
     @markers = @items.map do |item|
       {
-        lat: User.item.latitude,
-        lng: User.item.longitude
+        lat: item.user.latitude,
+        lng: item.user.longitude
       }
     end
 

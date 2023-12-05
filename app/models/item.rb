@@ -31,4 +31,3 @@ class Item < ApplicationRecord
   #   "#{city}, #{country} #{postcode}"
   # end
 end
-end
