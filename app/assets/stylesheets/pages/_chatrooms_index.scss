@@ -1,10 +1,9 @@
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   flex-shrink: 0;
   overflow: hidden;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  padding: 23px;
 }
 
 .chatroom-h1{
@@ -24,30 +23,32 @@ a{
 
 .card-product {
   overflow: hidden;
-  height: 120px;
-  background: white;
+  height: 90px;
+  background: rgb(255, 255, 255);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-bottom: 4px;
   margin-top: 4px;
   border-radius: 35px;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 100px;
   object-fit: cover;
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;

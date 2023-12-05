@@ -7,7 +7,7 @@ export default class extends Controller {
 
   submit(event) {
     const name = this.nameTarget.value
-    
+
     if (this.hasHatTarget) {
       var hat = this.hatTarget.dataset.item
     } else {
@@ -46,14 +46,16 @@ export default class extends Controller {
     fetch('/outfits', {
       method: 'POST',
       headers: {
+        "Accept": 'application/json',
         'Content-Type': 'application/json',
         'X-CSRF-Token': this.getCSRFToken()
       },
       body: JSON.stringify(data)
     })
-    .then(response => response.text())
+    .then(response => response.json())
     .then(data => {
-      console.log(data)
+      console.log(data.url)
+      window.location.href = data.url
     })
   }
 
