@@ -33,10 +33,8 @@ gem "cloudinary"
 gem "pg_search"
 gem "geocoder"
 
-
-
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem "redis", ">= 4.0.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -60,6 +58,12 @@ gem "bootstrap", "~> 5.2"
 gem "font-awesome-sass", "~> 6.1"
 
 gem "simple_form"
+
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
+
+# Gemfile
+gem 'faker'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

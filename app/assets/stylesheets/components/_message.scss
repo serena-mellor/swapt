@@ -1,0 +1,24 @@
+.message-row {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+// To style the message itself
+.sender-style, .receiver-style {
+  width: 75%;
+  max-width: 400px;
+  border-radius: 18px;
+  padding: 8px;
+  min-height: 80px;
+  word-break: break-all;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sender-style {
+  background-color: rgba(110, 122, 109, 0.6);
+}
+
+.receiver-style {
+  background-color:  rgba(110, 122, 109, 0.2);
+}

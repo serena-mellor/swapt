@@ -15,4 +15,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
     @items = @user.items.where(swappable: true).reject { |item| Swap.all.any? { |swap| swap.requested_item == item && swap.status == "pending" }}
   end
+
+  def nearby_users
+    @nearby_users = User.near([current_user.latitude, current_user.longitude], 10)
+  end
 end

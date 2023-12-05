@@ -22,40 +22,46 @@ serena = User.create!(username: "serena", first_name: "Serena", last_name: "Mell
 sandra = User.create!(username: "sandra", first_name: "Sandra", last_name: "Luukas", password: "654321", email: "sandra@gmail.com")
 
 puts "Creating categories"
-shoes = Category.create!(title: "Shoes")
+
+shoes = Category.create!(title: "Shoes", position: "Bottom")
 shoes_image = URI.open("https://images.unsplash.com/photo-1565814636199-ae8133055c1c?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 shoes.photo.attach(io: shoes_image, filename: "image/shoes")
 shoes.save
 
-shirts = Category.create!(title: "Shirts")
+shirts = Category.create!(title: "Shirts", position: "Top")
 shirts_image = URI.open("https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 shirts.photo.attach(io: shirts_image, filename: "image/shirts")
 shirts.save
 
-dresses = Category.create!(title: "Dresses")
+dresses = Category.create!(title: "Dresses", position: "Dress")
 dresses_image = URI.open("https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 dresses.photo.attach(io: dresses_image, filename: "image/dresses")
 dresses.save
 
-trousers = Category.create!(title: "Trousers")
+trousers = Category.create!(title: "Trousers", position: "Middle")
 trousers_image = URI.open("https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 trousers.photo.attach(io: trousers_image, filename: "image/trousers")
 trousers.save
 
-accessories = Category.create!(title: "Accessories")
+accessories = Category.create!(title: "Accessories", position: "Accessories")
 accessories_image = URI.open("https://images.pexels.com/photos/1453008/pexels-photo-1453008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 accessories.photo.attach(io: accessories_image, filename: "image/accessories")
 accessories.save
 
-jackets = Category.create!(title: "Jackets")
+jackets = Category.create!(title: "Jackets", position: "Top")
 jackets_image = URI.open("https://images.pexels.com/photos/16170/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 jackets.photo.attach(io: jackets_image, filename: "image/jackets")
 jackets.save
 
-knitwear = Category.create!(title: "Knitwear")
+knitwear = Category.create!(title: "Knitwear", position: "Top")
 knitwear_image = URI.open("https://images.pexels.com/photos/6630834/pexels-photo-6630834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 knitwear.photo.attach(io: knitwear_image, filename: "image/knitwear")
 knitwear.save
+
+hats = Category.create!(title: "Hats", position: "Hat")
+hats_image = URI.open("https://images.pexels.com/photos/458649/pexels-photo-458649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+hats.photo.attach(io: hats_image, filename: "image/hats")
+hats.save
 
 puts "Creating items"
 
@@ -85,7 +91,7 @@ denim_shirt.photo.attach(io: denim_shirt_image, filename: "image/denim_shirt")
 denim_shirt.save
 
 black_jacket_image = URI.open("https://img01.ztat.net/article/spp-media-p1/76fd75dc1dc94f48898db3dd6d5ae882/b4b816d0a2a34bb4a447dee5bdcee1bb.jpg?imwidth=1800&filter=packshot")
-black_jacket = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", user: gavin, category: jackets)
+black_jacket = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", swappable: true, user: gavin, category: jackets)
 black_jacket.photo.attach(io: black_jacket_image, filename: "image/black_jacket")
 black_jacket.save
 
@@ -170,12 +176,12 @@ jeans.photo.attach(io: jeans_image, filename: "image/jeans")
 jeans.save
 
 green_sweater_image = URI.open("https://pix.bonprix.es/imgc/0/0/2/1/2/2/9/4/0/4/_640/21229404/jersey-con-cremallera-caqui-oscuro.jpg")
-green_sweater = Item.new(title: "Zip-up sweater", description: "Stay cozy and on-trend with a classic zip-up sweater.",swappable: true, user: camilla, category: knitwear)
+green_sweater = Item.new(title: "Zip-up sweater", description: "Stay cozy and on-trend with a classic zip-up sweater.",swappable: true, user: camilla, category: sweaters)
 green_sweater.photo.attach(io: green_sweater_image, filename: "image/green_sweater")
 green_sweater.save
 
 white_sweater_image = URI.open("https://cdn.laredoute.com/products/6/4/c/64c9d720bb0ca3fece5b7f899a6d5c05.jpg?width=1200&dpr=1")
-white_sweater = Item.new(title: "White sweater", description: "A polished choice for a smart-casual look.", user: serena, category: knitwear)
+white_sweater = Item.new(title: "White sweater", description: "A polished choice for a smart-casual look.", user: serena, category: sweaters)
 white_sweater.photo.attach(io: white_sweater_image, filename: "image/white_sweater")
 white_sweater.save
 
@@ -212,3 +218,34 @@ OutfitItem.create!(outfit: beach_day, item: sandals)
 
 
 puts "Created  #{Item.count} items"
+
+
+
+# seeds.rb or any other Ruby file
+require 'faker'
+
+# Generate a random address
+address = Faker::Address.full_address
+puts "Fake Address: #{address}"
+
+# Generate a random city
+city = Faker::Address.city
+puts "Fake City: #{city}"
+
+# Generate a random country
+country = Faker::Address.country
+puts "Fake Country: #{country}"
+
+# Generate a random latitude and longitude
+latitude = Faker::Address.latitude
+longitude = Faker::Address.longitude
+puts "Fake Latitude: #{latitude}, Fake Longitude: #{longitude}"
+
+# db/seeds.rb
+10.times do
+  Item.create!(
+    name: Faker::Commerce.product_name,
+    # Other item attributes...
+    item_location: Faker::Address.full_address
+  )
+end
