@@ -63,6 +63,7 @@ sandra = User.create!(
   country: "Spain"
 )
 
+
 puts "Creating categories"
 
 shoes = Category.create!(title: "Shoes", position: "bottom")
