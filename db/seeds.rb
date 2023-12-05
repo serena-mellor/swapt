@@ -25,9 +25,9 @@ camilla = User.create!(
   last_name: "Ligovic",
   password: "123456",
   email: "camilla.ligovic@gmail.com",
-  address: "4 Rue des Rosiers, Paris, France",
-  postcode: "75004",
-  country: "France"
+  address: "Pl. del Diamant, 9",
+  postcode: "08012",
+  country: "Spain"
 )
 
 gavin = User.create!(
@@ -36,9 +36,9 @@ gavin = User.create!(
   last_name: "Wotton",
   password: "abcdef",
   email: "gavin.wotton@gmail.com",
-  address: "222 Regent Street, lomndon, United Kingdom",
-  postcode: "W1B 5BD",
-  country: "United Kingdom"
+  address: "Av. Diagonal, 579",
+  postcode: "08029",
+  country: "Spain"
 )
 
 serena = User.create!(
@@ -47,9 +47,9 @@ serena = User.create!(
   last_name: "Mellor",
   password: "234567",
   email: "serena@gmail.com",
-  address: "Biblioteksgatan 3, Stockholm, Sweden",
-  postcode: "111 46",
-  country: "Sweden"
+  address: "C/ de Ferlandina, 20",
+  postcode: "08001",
+  country: "Spain"
 )
 
 sandra = User.create!(
@@ -58,10 +58,11 @@ sandra = User.create!(
   last_name: "Luukas",
   password: "654321",
   email: "sandra@gmail.com",
-  address: "Friedrichstraße 83, Berlin, Germany",
-  postcode: "10117",
-  country: "Germany"
+  address: "Pg. de Gràcia, 27",
+  postcode: "08012",
+  country: "Spain"
 )
+
 
 puts "Creating categories"
 
