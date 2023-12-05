@@ -1,0 +1,60 @@
+.category-card {
+  position: relative;
+  width: 100vw;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 2px solid #D4C2D6;
+  box-shadow: 0px 0px 7px rgba(10, 10, 10, 0.152);
+  padding-bottom: 30%;
+}
+
+.category-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5); /* Set your desired opacity here */
+  border-radius: inherit;
+  position: absolute;
+}
+
+.category-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.category-card p.category-names {
+  position: relative; /* Ensures text is on top of the pseudo-element */
+  z-index: 1; /* Ensures text is on top of the pseudo-element */
+}
+
+.categories {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F3EDE2;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 60px;
+}
+
+.category-names {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 3px;
+  text-shadow: #D4C2D6 1px 0 20px;
+  text-decoration: none;
+  align-self: center;
+}

@@ -22,13 +22,14 @@ serena = User.create!(username: "serena", first_name: "Serena", last_name: "Mell
 sandra = User.create!(username: "sandra", first_name: "Sandra", last_name: "Luukas", password: "654321", email: "sandra@gmail.com")
 
 puts "Creating categories"
-shoes = Category.create!(title: "Shoes")
-shirts = Category.create!(title: "Shirts")
-dresses = Category.create!(title: "Dresses")
-trousers = Category.create!(title: "Trousers")
-accessories = Category.create!(title: "Accessories")
-jackets = Category.create!(title: "Jackets")
-knitwear = Category.create!(title: "Knitwear")
+shoes = Category.create!(title: "Shoes", position: "Bottom")
+shirts = Category.create!(title: "Shirts", position: "Top")
+dresses = Category.create!(title: "Dresses", position: "Dress")
+trousers = Category.create!(title: "Trousers", position: "Middle")
+accessories = Category.create!(title: "Accessories", position: "Accessories")
+jackets = Category.create!(title: "Jackets", position: "Top")
+sweaters = Category.create!(title: "Sweaters", position: "Top")
+hats = Category.create!(title: "Hats", position: "Hat")
 
 puts "Creating items"
 
