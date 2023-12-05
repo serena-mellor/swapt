@@ -1,4 +1,7 @@
 <div class="container">
+  <%= render "shared/hamburger_menu" %>
   <h2 class="header-items">Swappable Items</h2>
   <%= render "items_list", items: @items %>
 </div>
+
+<%# <%= form_tag(search_items_path, method: :get) do %> %>

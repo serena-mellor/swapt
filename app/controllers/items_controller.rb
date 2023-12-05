@@ -6,13 +6,14 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def index
-    @items = Item.where(swappable: true)
 
     if params[:category_id].present?
       @items = Item.where(category_id: params[:category_id])
     else
       @items = Item.all
     end
+    
+    @items = Item.where(swappable: true).where.not(user: current_user)
   end
 
   def new
@@ -44,5 +45,11 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def items_params
     params.require(:item).permit(:title, :description, :swappable, :category_id, :photo)
+  end
+
+# app/controllers/items_controller.rb
+  def search
+    @location = params[:location]
+    @items = Item.near(@location, 10) # Adjust the distance as needed
   end
 end

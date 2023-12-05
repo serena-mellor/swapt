@@ -13,14 +13,34 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
 
   resources :items do
-    resources :swaps, only: [:create]
+    resources :swaps, only: [:create, :update]
   end
 
-  get '/my_closet', to: 'users#closet'
+  resources :swaps, only: [:show, :index]
 
-  resources :outfits
+  get '/received_swaps', to: 'swaps#received_swaps'
 
-  get '/profile/:id', to: 'users#profile'
+
   
   resources :categories, only: :index
+  
+  get '/my_closet', to: 'users#my_closet'
+
+  get '/closet/:user_id', to: 'users#closet', as: :closet
+
+  resources :outfits, only: [:new, :create]
+
+  # get '/outfitcreation', to: 'outfits#outfit_creation'
+
+  get '/profile/:id', to: 'users#profile', as: :profile
+
+  resources :chatrooms, only: [:index, :show] do
+    resources :messages, only: :create
+  end
 end
+
+# resources :items do
+#   collection do
+#     get 'search'
+#   end
+# end
