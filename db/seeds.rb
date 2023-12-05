@@ -25,8 +25,8 @@ camilla = User.create!(
   last_name: "Ligovic",
   password: "123456",
   email: "camilla.ligovic@gmail.com",
-  address: "Pl. del Diamant, 9",
-  postcode: "08012",
+  address: "Pg. de Gràcia, 27",
+  postcode: "08007",
   country: "Spain"
 )
 
@@ -58,7 +58,7 @@ sandra = User.create!(
   last_name: "Luukas",
   password: "654321",
   email: "sandra@gmail.com",
-  address: "Pg. de Gràcia, 27",
+  address: "Pl. del Diamant, 9",
   postcode: "08012",
   country: "Spain"
 )

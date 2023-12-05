@@ -1,10 +1,16 @@
 class OutfitsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
+  def index
+    @outfits = Outfit.all
+  end
+
   def new
     @outfit = Outfit.new
-    @hats = Item.all.select { |item| item.category.hat? }
-    @tops = Item.all.select { |item| item.category.top? }
-    @middles = Item.all.select { |item| item.category.middle? }
-    @bottoms = Item.all.select { |item| item.category.bottom? }
+    @hats = current_user.items.select { |item| item.category.hat? }
+    @tops = current_user.items.select { |item| item.category.top? }
+    @middles = current_user.items.select { |item| item.category.middle? }
+    @bottoms = current_user.items.select { |item| item.category.bottom? }
   end
 
   def create
