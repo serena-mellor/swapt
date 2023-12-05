@@ -10,6 +10,9 @@
 require "open-uri"
 
 puts "Cleaning up the database.."
+Message.destroy_all
+Chatroom.destroy_all
+Swap.destroy_all
 Item.destroy_all
 Category.destroy_all
 Outfit.destroy_all
@@ -102,7 +105,7 @@ denim_shirt.photo.attach(io: denim_shirt_image, filename: "image/denim_shirt")
 denim_shirt.save
 
 black_jacket_image = URI.open("https://img01.ztat.net/article/spp-media-p1/76fd75dc1dc94f48898db3dd6d5ae882/b4b816d0a2a34bb4a447dee5bdcee1bb.jpg?imwidth=1800&filter=packshot")
-black_jacket = Item.new(title: "Printed Hawaiian Shirt", description: "Channel tropical vibes with a fun printed Hawaiian shirt.", user: gavin, category: jackets)
+black_jacket = Item.new(title: "Black Jacket", description: "Trendy black jacket for any occasion.", swappable: true, user: gavin, category: jackets)
 black_jacket.photo.attach(io: black_jacket_image, filename: "image/black_jacket")
 black_jacket.save
 
@@ -121,7 +124,7 @@ wide_leg = Item.new(title: "Wide Leg Trousers", description: "Make a statement w
 wide_leg.photo.attach(io: wide_leg_image, filename: "image/wide_leg")
 wide_leg.save
 
-leggings_image = URI.open("https://www.emp-online.es/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw58d93b15/images/5/3/0/7/530725a.jpg?sfrm=png")
+leggings_image = URI.open("https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/f8954bce717e7f927eab296691b11ced.jpg?imageView2/2/w/800/q/70")
 leggings = Item.new(title: "Athleisure Leggings", description: "Perfect for workouts or casual athleisure style.", user: sandra, category: trousers)
 leggings.photo.attach(io: leggings_image, filename: "image/leggings")
 leggings.save
@@ -252,11 +255,11 @@ latitude = Faker::Address.latitude
 longitude = Faker::Address.longitude
 puts "Fake Latitude: #{latitude}, Fake Longitude: #{longitude}"
 
-# db/seeds.rb
-10.times do
-  Item.create!(
-    name: Faker::Commerce.product_name,
-    # Other item attributes...
-    item_location: Faker::Address.full_address
-  )
-end
+# # db/seeds.rb
+# 10.times do
+#   Item.create!(
+#     name: Faker::Commerce.product_name,
+#     # Other item attributes...
+#     item_location: Faker::Address.full_address
+#   )
+# end
