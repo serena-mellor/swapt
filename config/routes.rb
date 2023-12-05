@@ -25,10 +25,11 @@ Rails.application.routes.draw do
   resources :categories, only: :index
 
   get '/my_closet', to: 'users#my_closet'
+  get '/my_outfits', to: 'users#my_outfits'
 
   get '/closet/:user_id', to: 'users#closet', as: :closet
 
-  resources :outfits, only: [:new, :create, :show]
+  resources :outfits, only: [:new, :create, :show, :index]
 
   # get '/outfitcreation', to: 'outfits#outfit_creation'
 

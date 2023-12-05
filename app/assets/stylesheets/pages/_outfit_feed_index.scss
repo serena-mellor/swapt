@@ -1,0 +1,21 @@
+.outfit-cards {
+  .heading-outfit-index {
+    margin-top: 15px;
+    line-break: strict;
+  }
+
+  .outfit-card-explore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #798478;
+    margin: 0 0 25px 0;
+  }
+
+  .outfit-items {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 15px 0;
+  }
+}
