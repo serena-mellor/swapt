@@ -31,7 +31,7 @@ gem "devise"
 gem "dotenv-rails"
 gem "cloudinary"
 gem "pg_search"
-gem "geocoder"
+
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", ">= 4.0.1"
@@ -59,7 +59,7 @@ gem "font-awesome-sass", "~> 6.1"
 
 gem "simple_form"
 
-gem 'geocoder', '~> 1.3', '>= 1.3.7'
+gem 'geocoder'
 
 # Gemfile
 gem 'faker'

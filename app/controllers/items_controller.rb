@@ -17,6 +17,13 @@ skip_before_action :authenticate_user!, only: [:index, :show]
       format.text { render partial: "items_list", locals: {items: @items}, formats: [:html] }
     end
 
+    @markers = @items.map do |item|
+      {
+        lat: User.item.latitude,
+        lng: User.item.longitude
+      }
+    end
+
   end
 
   def new

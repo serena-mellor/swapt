@@ -19,4 +19,5 @@ class UsersController < ApplicationController
   def nearby_users
     @nearby_users = User.near([current_user.latitude, current_user.longitude], 10)
   end
+
 end
