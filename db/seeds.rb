@@ -22,10 +22,10 @@ camilla = User.create!(
   last_name: "Ligovic",
   password: "123456",
   email: "camilla.ligovic@gmail.com",
-  street: "4 Rue des Rosiers",
-  city: "Paris",
-  state: "75004",
-  country: "France"
+  street: "Pl. del Diamant, 9",
+  city: "Barcelona",
+  state: "08012",
+  country: "Spain"
 )
 
 gavin = User.create!(
@@ -34,10 +34,10 @@ gavin = User.create!(
   last_name: "Wotton",
   password: "abcdef",
   email: "gavin.wotton@gmail.com",
-  street: "222 Regent St.",
-  city: "London",
-  state: "W1B 5BD",
-  country: "United Kingdom"
+  street: "Av. Diagonal, 579",
+  city: "Barcelona",
+  state: "08029",
+  country: "Spain"
 )
 
 serena = User.create!(
@@ -46,10 +46,10 @@ serena = User.create!(
   last_name: "Mellor",
   password: "234567",
   email: "serena@gmail.com",
-  street: "Biblioteksgatan 3",
-  city: "Stockholm",
-  state: "111 46",
-  country: "Sweden"
+  street: "Pg. de Gràcia, 33",
+  city: "Barcelona",
+  state: "08007",
+  country: "Spain"
 )
 
 sandra = User.create!(
@@ -58,12 +58,11 @@ sandra = User.create!(
   last_name: "Luukas",
   password: "654321",
   email: "sandra@gmail.com",
-  street: "Friedrichstraße 83",
-  city: "Berlin",
-  state: "10117",
-  country: "Germany"
+  street: "C/ de Ferlandina, 20",
+  city: "Barcelona",
+  state: "08001",
+  country: "Spain"
 )
-
 
 puts "Creating categories"
 shoes = Category.create!(title: "Shoes", position: "Bottom")
