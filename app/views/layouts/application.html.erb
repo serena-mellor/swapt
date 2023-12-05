@@ -17,7 +17,7 @@
     <%= yield %>
     <%= render "shared/flashes" %>
 
-    <% unless controller_name=="pages" || params[:action]=="my_closet" || params[:action]=="my_outfits" || params[:action]=="outfits"%>
+    <% unless controller_name=="pages" || params[:action]=="my_closet" || params[:action]=="my_outfits" || (params[:controller]=="outfits" && params[:action]=="index")%>
       <%= render "shared/navbar" %>
     <% end %>
   </body>

@@ -1,9 +1,10 @@
   <%# <div class="back-arrow">
     <%= link_to items_path do %>
       <%# <i class="fa-solid fa-arrow-left"></i> %>
-    <%# <% end %> 
+    <%# <% end %>
   <%# </div> %>
-
+  <div class="container-profile">
+  <%= render "shared/hamburger_menu" %>
   <div class="profile-container">
   <div class="profile-picture">
     <img src="<%= image_path('averie-woodard-4nulm-JUYFo-unsplash.jpg') %>" alt="Profile Image">
@@ -17,4 +18,5 @@
   <div class="profile-info">
     <button class="btn-swap-history">Swap History</button>
   </div>
+</div>
 </div>
