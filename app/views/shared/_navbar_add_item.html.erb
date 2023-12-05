@@ -1,0 +1,21 @@
+<nav class="bottom-navbar">
+  <%= link_to home_path, class: "navbar-item" do %>
+    <i class="fas fa-home"></i>
+  <% end %>
+
+  <%= link_to my_closet_path, class: "navbar-item" do %>
+    <i class="fa-solid fa-shirt"></i>
+  <% end %>
+
+  <%= link_to new_item_path, class: "navbar-item" do %>
+    <i class="fa-solid fa-plus"></i>
+  <% end %>
+
+    <%= link_to "#", class: "navbar-item" do %>
+    <i class="fa-solid fa-person-dress"></i>
+  <% end %>
+
+  <%= link_to items_path, class: "navbar-item" do %>
+    <i class="fa-solid fa-rotate"></i>
+  <% end %>
+</nav>
