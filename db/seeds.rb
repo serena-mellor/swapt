@@ -106,6 +106,7 @@ knitwear_image = URI.open("https://images.pexels.com/photos/6630834/pexels-photo
 knitwear.photo.attach(io: knitwear_image, filename: "image/knitwear")
 knitwear.save
 puts "."
+
 hats = Category.create!(title: "Hats", position: "hat")
 hats_image = URI.open("https://images.pexels.com/photos/458649/pexels-photo-458649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 hats.photo.attach(io: hats_image, filename: "image/hats")
