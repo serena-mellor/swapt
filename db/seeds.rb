@@ -16,10 +16,54 @@ Outfit.destroy_all
 User.destroy_all
 
 puts "Creating users"
-camilla = User.create!(username: "camilla", first_name: "Camilla", last_name: "Ligovic", password: "123456", email: "camilla.ligovic@gmail.com")
-gavin = User.create!(username: "gavin", first_name: "Gavin", last_name: "Wotton", password: "abcdef", email: "gavin.wotton@gmail.com")
-serena = User.create!(username: "serena", first_name: "Serena", last_name: "Mellor", password: "234567", email: "serena@gmail.com")
-sandra = User.create!(username: "sandra", first_name: "Sandra", last_name: "Luukas", password: "654321", email: "sandra@gmail.com")
+camilla = User.create!(
+  username: "camilla",
+  first_name: "Camilla",
+  last_name: "Ligovic",
+  password: "123456",
+  email: "camilla.ligovic@gmail.com",
+  street: "4 Rue des Rosiers",
+  city: "Paris",
+  state: "75004",
+  country: "France"
+)
+
+gavin = User.create!(
+  username: "gavin",
+  first_name: "Gavin",
+  last_name: "Wotton",
+  password: "abcdef",
+  email: "gavin.wotton@gmail.com",
+  street: "222 Regent St.",
+  city: "London",
+  state: "W1B 5BD",
+  country: "United Kingdom"
+)
+
+serena = User.create!(
+  username: "serena",
+  first_name: "Serena",
+  last_name: "Mellor",
+  password: "234567",
+  email: "serena@gmail.com",
+  street: "Biblioteksgatan 3",
+  city: "Stockholm",
+  state: "111 46",
+  country: "Sweden"
+)
+
+sandra = User.create!(
+  username: "sandra",
+  first_name: "Sandra",
+  last_name: "Luukas",
+  password: "654321",
+  email: "sandra@gmail.com",
+  street: "Friedrichstraße 83",
+  city: "Berlin",
+  state: "10117",
+  country: "Germany"
+)
+
 
 puts "Creating categories"
 shoes = Category.create!(title: "Shoes", position: "Bottom")
