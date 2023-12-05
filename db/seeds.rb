@@ -68,14 +68,14 @@ sandra = User.create!(
 )
 
 puts "Creating categories"
-shoes = Category.create!(title: "Shoes", position: "Bottom")
-shirts = Category.create!(title: "Shirts", position: "Top")
-dresses = Category.create!(title: "Dresses", position: "Dress")
-trousers = Category.create!(title: "Trousers", position: "Middle")
-accessories = Category.create!(title: "Accessories", position: "Accessories")
-jackets = Category.create!(title: "Jackets", position: "Top")
-sweaters = Category.create!(title: "Sweaters", position: "Top")
-hats = Category.create!(title: "Hats", position: "Hat")
+shoes = Category.create!(title: "Shoes", position: :bottom)
+shirts = Category.create!(title: "Shirts", position: :top)
+dresses = Category.create!(title: "Dresses", position: :dress)
+trousers = Category.create!(title: "Trousers", position: :middle)
+accessories = Category.create!(title: "Accessories", position: :accessories)
+jackets = Category.create!(title: "Jackets", position: :top)
+sweaters = Category.create!(title: "Sweaters", position: :top)
+hats = Category.create!(title: "Hats", position: :hat)
 
 puts "Creating items"
 
@@ -230,10 +230,7 @@ OutfitItem.create!(outfit: beach_day, item: hawaiian_shirt )
 OutfitItem.create!(outfit: beach_day, item: shorts )
 OutfitItem.create!(outfit: beach_day, item: sandals)
 
-
 puts "Created  #{Item.count} items"
-
-
 
 # seeds.rb or any other Ruby file
 require 'faker'

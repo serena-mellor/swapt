@@ -1,5 +1,5 @@
 .swiper-container {
-  align-items: center;
+  text-align: center;
 
   .outfit-creator-heading {
     text-align: center;
@@ -19,9 +19,14 @@
 
   .outfit-input {
     border-radius: 5px;
-    width: 300px;
     border: none;
+    justify-content: center;
   }
+
+  // .outfit-input-container {
+  //   align-items: center;
+  //   justify-content: center;
+  // }
 }
 
 .swiper-slide {
