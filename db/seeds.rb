@@ -68,42 +68,49 @@ puts "Creating categories"
 shoes = Category.create!(title: "Shoes", position: "bottom")
 shoes_image = URI.open("https://images.unsplash.com/photo-1565814636199-ae8133055c1c?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 shoes.photo.attach(io: shoes_image, filename: "image/shoes")
-shoes.save
+shoes.save!
+puts "."
 
 shirts = Category.create!(title: "Shirts", position: "top")
 shirts_image = URI.open("https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-shirts.photo.attach(io: shirts_image, filename: "image/shirts")
+shirts.photo.attach(io: shirts_image, filename: "shirts.jpg")
 shirts.save
+puts "."
 
 dresses = Category.create!(title: "Dresses", position: "dress")
 dresses_image = URI.open("https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 dresses.photo.attach(io: dresses_image, filename: "image/dresses")
 dresses.save
+puts "."
 
 trousers = Category.create!(title: "Trousers", position: "middle")
 trousers_image = URI.open("https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 trousers.photo.attach(io: trousers_image, filename: "image/trousers")
 trousers.save
+puts "."
 
 accessories = Category.create!(title: "Accessories", position: "accessories")
 accessories_image = URI.open("https://images.pexels.com/photos/1453008/pexels-photo-1453008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 accessories.photo.attach(io: accessories_image, filename: "image/accessories")
 accessories.save
+puts "."
 
 jackets = Category.create!(title: "Jackets", position: "top")
 jackets_image = URI.open("https://images.pexels.com/photos/16170/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 jackets.photo.attach(io: jackets_image, filename: "image/jackets")
 jackets.save
+puts "."
 
 knitwear = Category.create!(title: "Knitwear", position: "top")
 knitwear_image = URI.open("https://images.pexels.com/photos/6630834/pexels-photo-6630834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 knitwear.photo.attach(io: knitwear_image, filename: "image/knitwear")
 knitwear.save
-
+puts "."
 hats = Category.create!(title: "Hats", position: "hat")
 hats_image = URI.open("https://images.pexels.com/photos/458649/pexels-photo-458649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 hats.photo.attach(io: hats_image, filename: "image/hats")
 hats.save
+puts "."
 
 puts "Creating items"
 
