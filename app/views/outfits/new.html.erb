@@ -1,0 +1,51 @@
+<!-- Slider main container -->
+<div class="container">
+  <%= render "shared/hamburger_menu" %>
+  <div data-controller="swiper outfit" class="swiper-container">
+      <!-- Additional required wrapper -->
+    <%# <h2 class="outfit-creator-heading"><%= "Outfit creator" %></h2>
+
+      <div class="swiper-container swiper" data-swiper-target="container1">
+        <div class="swiper-wrapper">
+          <% @hats.each do |hat| %>
+            <!-- Slides -->
+            <div data-outfit-target="hat" data-item="<%= hat.id %> "class="swiper-slide"> <%= cl_image_tag hat.photo.key, height: 200, width: 200 %></div>
+          <% end %>
+          </div>
+        </div>
+
+      <div class="swiper-container swiper" data-swiper-target="container2">
+        <div class="swiper-wrapper">
+        <% @tops.each do |top| %>
+          <!-- Slides -->
+          <div data-outfit-target="top" data-item="<%= top.id %> "class="swiper-slide"> <%= cl_image_tag top.photo.key, height: 200, width: 200 %></div>
+        <% end %>
+        </div>
+      </div>
+
+      <div class="swiper-container swiper" data-swiper-target="container3">
+        <div class="swiper-wrapper">
+        <% @middles.each do |middle| %>
+          <!-- Slides -->
+          <div data-outfit-target="middle" data-item="<%= middle.id %> "class="swiper-slide"> <%= cl_image_tag middle.photo.key, height: 200, width: 200 %></div>
+        <% end %>
+        </div>
+      </div>
+
+      <div class="swiper-container swiper" data-swiper-target="container4">
+        <div class="swiper-wrapper">
+        <% @bottoms.each do |bottom| %>
+          <!-- Slides -->
+          <div data-outfit-target="bottom" data-item="<%= bottom.id %> "class="swiper-slide"> <%= cl_image_tag bottom.photo.key, height: 200, width: 200 %></div>
+        <% end %>
+        </div>
+      </div>
+    <div class="outfit-input-container">
+      <input class="outfit-input" data-outfit-target="name" type="text" name="name" placeholder="Name your outfit" required>
+    </div>
+
+    <div class="outfit-submit-btn">
+      <button class="btn-main submit" data-action="click->outfit#submit">Save outfit</button>
+    </div>
+  </div>
+</div>

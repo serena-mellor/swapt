@@ -24,7 +24,9 @@ Rails.application.routes.draw do
 
   get '/closet/:user_id', to: 'users#closet', as: :closet
 
-  resources :outfits
+  resources :outfits, only: [:new, :create]
+
+  # get '/outfitcreation', to: 'outfits#outfit_creation'
 
   get '/profile/:id', to: 'users#profile', as: :profile
 

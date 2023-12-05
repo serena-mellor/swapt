@@ -1,0 +1,30 @@
+.swiper-container {
+  align-items: center;
+
+  .outfit-creator-heading {
+    text-align: center;
+  }
+
+  .outfit-submit-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-main.submit {
+    background-color: #798478;
+    border: none;
+    margin: 15px 0 15px 0;
+    align-items: center;
+  }
+
+  .outfit-input {
+    border-radius: 5px;
+    width: 300px;
+    border: none;
+  }
+}
+
+.swiper-slide {
+  display: flex!important;
+  justify-content: center;
+}
