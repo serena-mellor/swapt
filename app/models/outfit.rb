@@ -8,6 +8,6 @@ class Outfit < ApplicationRecord
   # end
 
   def sort_items_by_position
-    items.includes?(:category).sort_by { |item| Category.positions[item.category.position] }
+    items.includes(:category).sort_by { |item| Category.positions[item.category.position] }
   end
 end
