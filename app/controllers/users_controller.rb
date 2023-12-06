@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     @items = current_user.items
   end
 
+  def my_favourites
+    @favourites = current_user.favourited_outfits
+  end
+
   def closet
     @user = User.find(params[:user_id])
     @items = @user.items.where(swappable: true).reject { |item| Swap.all.any? { |swap| swap.requested_item == item && swap.status == "pending" }}
