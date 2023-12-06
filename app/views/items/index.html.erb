@@ -1,4 +1,4 @@
-<div class="container" data-controller="search-items">
+<div class="container" data-controller="search-items" >
   <div class="row">
     <div class="col-10 d-flex justify-content-end">
       <%= render "shared/search" %>
@@ -13,14 +13,23 @@
       <h2 class="header-items">Swappable Items</h2>
        <div class="d-flex filter-button-row gap-3">
       <button class="filter-button">Sort</button>
-      <button class="filter-button">Location</button>
+      <div data-controller="show-range">
+        <button data-action="click->show-range#toggle" class="filter-button">Location</button>
+      <div data-show-range-target="togglableElement">
+        <%= form_with(url: items_path,  method: :get) do |f| %>
+          <%= f.range_field :distance, onchange: 'this.form.submit()', value: params[:distance] %>
+        <% end %>
+      </div>
+    </div>
+
+</div>
       </div>
       <%= render "items_list", items: @items %>
     </div>
   </div>
 </div>
 
-<div style="width: 100%; height: 600px;"
+<div style="width: 90%; height: 400px; display: flex; justify-content: center; margin: 0 auto;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
