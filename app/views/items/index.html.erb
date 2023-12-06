@@ -23,13 +23,18 @@
         <button data-action="click->show-range#toggle" class="filter-button">Location</button>
         <div data-show-range-target="togglableElement" class="<%= "d-none" unless params[:distance].present?%>">
           <%= form_with(url: items_path, method: :get) do |f| %>
-            <%= f.range_field :distance, onchange: 'this.form.submit()', value: params[:distance] %>
+            <%= f.range_field :distance, onchange: 'this.form.submit()', value: params[:distance], step: 0.1, max: 10 %>
+            <div class="d-flex justify-content-between">
+            <p>0km</p>
+            <p><%= params[:distance] %>km</p>
+            <p>10km</p>
+            </div>
           <% end %>
         </div>
       </div>
     <div>
       <label class="switch">
-        <input data-action="click->map-toggle#map click->toggle-list#list"  type="checkbox" >
+        <input data-map-toggle-target="switch" data-action="click->map-toggle#map click->toggle-list#list"  type="checkbox" >
         <span class="slider"></span>
       </label>
     </div>
