@@ -38,4 +38,4 @@
   </div>
 </section>
 
-<!-- app/views/items/show.html.erb -->  <% content_for :meta_title, "#{@item.title} is on #{DEFAULT_META["meta_product_name"]}" %>  <% content_for :meta_description, @item.description %>  <% content_for :meta_image, cl_image_path(@item.photo.key) %>
+<% content_for :meta_title, "#{@item.title} is on #{DEFAULT_META["meta_item_name"]}" %>  <% content_for :meta_description, @item.description %>  <% content_for :meta_image, cl_image_path(@item.photo.key) %>
