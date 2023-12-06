@@ -1,4 +1,10 @@
-<div class="outfit-card-explore">
+<div class="outfit-card-explore" data-controller="favourites">
+  <% if current_user && current_user.favourites.pluck(:outfit_id).include?(outfit.id) %>
+    <% user_favourite_outfit = outfit.favourites.find_by(user_id: current_user.id) %>
+    <%= link_to '<i class="fa-solid fa-heart fa-xl"></i>'.html_safe, favourite_path(user_favourite_outfit, favourite_id: user_favourite_outfit.id), data:{ turbo_method: :delete, favourite_id: user_favourite_outfit.id, action: 'click->favourites#deleteFavourite'} %>
+  <% else %>
+    <%= link_to '<i class="fa-regular fa-heart fa-xl"></i>'.html_safe, outfit_favourites_path({ outfit_id: outfit.id }), data: { turbo_method: :post, outfit_id: outfit.id, action: 'click->favourites#addFavourite'} %>
+  <% end %>
   <h2 class="heading-outfit-index"><%= outfit.name %></h2>
   <% unless params[:controller] == "users" %>
   <p>@<%= link_to outfit.user.username, closet_path(outfit.user.id) %></p>
