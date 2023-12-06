@@ -13,7 +13,7 @@
   <div class="card-description">
     <h2 class="item-title"><%= @item.title %></h2>
     <p class="item-description"><%= @item.description %></p>
-    <p class="owned-by-text">Owned by <%= link_to @item.user.username, root_path, class: 'owned-by-link' %></p>
+    <p class="owned-by-text">Owned by <%= link_to @item.user.username, closet_path(@item.user), class: 'owned-by-link' %></p>
   </div>
 
 <section>
