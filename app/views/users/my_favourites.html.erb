@@ -1,10 +1,8 @@
 <div class="container">
   <%= render "shared/hamburger_menu" %>
     <div class="outfit-cards">
-      <% @outfits.each do |outfit| %>
-        <%= render "outfit", outfit: outfit %>
+      <% @favourites.each do |favourite| %>
+        <%= render "outfits/outfit", outfit: favourite %>
       <% end %>
     </div>
 </div>
-<%= render "shared/navbar_add_outfit" %>
-

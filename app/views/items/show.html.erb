@@ -30,10 +30,12 @@
       <% end %>
     <% else %>
       <%  if swap = Swap.find_by(receiver: current_user, sender: @item.user, status: :pending) %>
-        <%= link_to "Accept swap", item_swap_path(@item, swap), data: {turbo_method: :patch}, class:"btn-green" %>
+        <%= link_to "ACCEPT SWAP", item_swap_path(@item, swap), data: {turbo_method: :patch}, class:"btn-accept" %>
         <% else %>
       <%= button_to "SWAP", item_swaps_path(@item), class:"btn-green" %>
       <% end %>
     <% end %>
   </div>
 </section>
+
+<!-- app/views/offers/show.html.erb -->  <% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>  <% content_for :meta_description, @offer.description %>  <% content_for :meta_image, cl_image_path(@offer.photo.path) %>
