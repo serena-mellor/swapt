@@ -1,0 +1,8 @@
+<div class="container">
+  <%= render "shared/hamburger_menu" %>
+    <div class="outfit-cards">
+      <% @outfits.each do |outfit| %>
+        <%= render "outfits/outfit", outfit: outfit %>
+      <% end %>
+    </div>
+</div>

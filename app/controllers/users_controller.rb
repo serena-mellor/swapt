@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     # My own show page
   end
 
+  def my_outfits
+    @outfits = current_user.outfits
+  end
+
   def my_closet
     @items = current_user.items
   end
