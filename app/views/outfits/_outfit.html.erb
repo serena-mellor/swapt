@@ -11,8 +11,11 @@
   <% end %>
   <div class="outfit-items">
     <% outfit.sort_items_by_position.each do |item| %>
-      <%= cl_image_tag item.photo.key, height: 200, width: 200 %>
+      <% height = item_height(item) %>
+      <% width = item_width(item) %>
+      <%= cl_image_tag item.photo.key, height: height, width: width, crop: :fill %>
     <% end %>
   </div>
 </div>
-       <%= render "shared/navbar_add_outfit" %>
+<%= render "shared/navbar_add_outfit" %>
+
