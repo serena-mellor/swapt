@@ -11,6 +11,13 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   @items = @items.search_by_title_and_description(params[:query]) if params[:query].present?
   @items = @items.where(category_id: params[:category_id]) if params[:category_id].present?
   @items = @items.where(user_id:User.near(current_user.address, params[:distance]).map(&:id)) if params[:distance]
+
+  if params[:sort] == "newest"
+    @items = @items.order(created_at: :desc)
+  elsif params[:sort] == "alphabetical"
+    @items = @items.order(:title)
+  end
+
     respond_to do |format|
       format.html {
         @markers = @items.map do |item|

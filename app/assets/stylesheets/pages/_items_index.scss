@@ -42,6 +42,15 @@
 
 }
 
-.filter-button-row {
+  /* Style for the range slider track */
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background-color: white; /* Default color for the track */
+    border-radius: 5px; /* Rounded corners */
+    outline: none;
+    margin: 10px 0;
+  }
 
-}
+
