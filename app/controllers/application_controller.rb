@@ -16,4 +16,12 @@ class ApplicationController < ActionController::Base
     home_path
   end
 
+  def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
+  # heroku config:set DOMAIN=swapt.shop
+  # heroku config:get DOMAIN
+
+
 end
