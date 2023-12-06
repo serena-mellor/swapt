@@ -9,7 +9,7 @@
         <div class="swiper-wrapper">
           <% @hats.each do |hat| %>
             <!-- Slides -->
-            <div data-outfit-target="hat" data-item="<%= hat.id %>" class="swiper-slide"> <%= cl_image_tag hat.photo.key, height: 150, width: 150, crop: :fill %></div>
+            <div data-outfit-target="hat" data-item="<%= hat.id %>" class="swiper-slide"> <%= cl_image_tag hat.photo.key, height: 100, width: 150, crop: :fill %></div>
           <% end %>
           </div>
         </div>
@@ -41,7 +41,7 @@
         </div>
       </div>
     <%# <div class="outfit-input-container"> %>
-      <input class="outfit-input" data-outfit-target="name" type="text" name="name" placeholder="Name your outfit" required>
+      <input class="outfit-input" data-outfit-target="name" type="text" name="name" placeholder="  Name your outfit" required>
     <%# </div> %>
 
     <div class="outfit-submit-btn">
