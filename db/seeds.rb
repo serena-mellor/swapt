@@ -24,7 +24,7 @@ camilla = User.create!(
   first_name: "Camilla",
   last_name: "Ligovic",
   password: "123456",
-  email: "camilla.ligovic@gmail.com",
+  email: "camilla@gmail.com",
   address: "Pg. de Gràcia, 27",
   postcode: "08007",
   country: "Spain"
@@ -35,7 +35,7 @@ gavin = User.create!(
   first_name: "Gavin",
   last_name: "Wotton",
   password: "abcdef",
-  email: "gavin.wotton@gmail.com",
+  email: "gavin@gmail.com",
   address: "Av. Diagonal, 579",
   postcode: "08029",
   country: "Spain"
@@ -56,7 +56,7 @@ sandra = User.create!(
   username: "sandra",
   first_name: "Sandra",
   last_name: "Luukas",
-  password: "654321",
+  password: "123456",
   email: "sandra@gmail.com",
   address: "Pl. del Diamant, 9",
   postcode: "08012",
@@ -88,6 +88,12 @@ trousers = Category.create!(title: "Trousers", position: "middle")
 trousers_image = URI.open("https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 trousers.photo.attach(io: trousers_image, filename: "image/trousers")
 trousers.save
+puts "."
+
+skirts = Category.create!(title: "Skirts", position: "middle")
+skirts_image = URI.open("https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+skirts.photo.attach(io: skirts_image, filename: "image/skirts")
+skirts.save
 puts "."
 
 accessories = Category.create!(title: "Accessories", position: "accessories")
@@ -271,10 +277,10 @@ hat = Item.new(title: "Black hat", description: "Thick felt hat with ribbon arou
 hat.photo.attach(io: hat_image, filename: "image/hat")
 hat.save
 
-coat_image = File.open("app/assets/images/black_coat.png")
-coat = Item.new(title: "Black coat", description: "High quality crafted classic coat. Size: XS", swappable: true, user: camilla, category: jackets)
-coat.photo.attach(io: coat_image, filename: "image/coat")
-coat.save
+leather_image = File.open("app/assets/images/leather.png")
+leather = Item.new(title: "Black leather jacket", description: "High quality biker jacket. Size XS", swappable: true, user: camilla, category: jackets)
+leather.photo.attach(io: leather_image, filename: "image/leather")
+leather.save
 
 sherpa_image = File.open("app/assets/images/sherpa.png")
 sherpa = Item.new(title: "Denim Trucker Jacket", description: "The shearling collar and lining comes in a contrasting white colour and will keep you nice and warm. Size: S", swappable: true, user: sandra, category: jackets)
@@ -286,10 +292,10 @@ brown = Item.new(title: "Brown sherpa jacket", description: "Stay warm this wint
 brown.photo.attach(io: brown_image, filename: "image/brown")
 brown.save
 
-trench_image = File.open("app/assets/images/trench.png")
-trench = Item.new(title: "Beige trench coat", description: "Timeless classic Size: L", swappable: true, user: camilla, category: jackets)
-trench.photo.attach(io: trench_image, filename: "image/trench")
-trench.save
+suede_image = File.open("app/assets/images/suede.png")
+suede = Item.new(title: "Suede jacket", description: "Classic details include a collared neckline, asymmetric zip-up front and angled pockets.Size L", swappable: true, user: camilla, category: jackets)
+suede.photo.attach(io: suede_image, filename: "image/suede")
+suede.save
 
 blue_sweater_image = File.open("app/assets/images/bluesweater.png")
 blue_sweater = Item.new(title: "Winter Sweater", description: "Basic and beautiful design. Size: L", swappable: true, user: gavin, category: knitwear)
@@ -311,6 +317,25 @@ backbag = Item.new(title: "Backbag", description: "Water resistant bag", swappab
 backbag.photo.attach(io: backbag_image, filename: "image/backbag")
 backbag.save
 
+shiny_image = File.open("app/assets/images/shiny.png")
+shiny = Item.new(title: "Glitter skirt", description: "Midi, perfect for night out. Size S.", swappable: true, user: camilla, category: skirts)
+shiny.photo.attach(io: shiny_image, filename: "image/shiny")
+shiny.save
+
+skirt_image = File.open("app/assets/images/skirt.png")
+skirt = Item.new(title: "Black skirt", description: "For sophisticated look. Size M.", swappable: true, user: sandra, category: skirts)
+skirt.photo.attach(io: skirt_image, filename: "image/skirt")
+skirt.save
+
+skirtfloral_image = File.open("app/assets/images/skirtfloral.png")
+skirtfloral = Item.new(title: "Floral skirt", description: "To brighten up your closet. Size M.", swappable: true, user: camilla, category: skirts)
+skirtfloral.photo.attach(io: skirtfloral_image, filename: "image/skirtfloral")
+skirtfloral.save
+
+see_image = File.open("app/assets/images/see.png")
+see = Item.new(title: "Sheer shirt", description: "Disco shirt. Size M.", swappable: true, user: sandra, category: shirts)
+see.photo.attach(io: see_image, filename: "image/see")
+see.save
 
 sunday_brunch = Outfit.create!(name:"Sunday brunch", user:sandra)
 OutfitItem.create!(outfit: sunday_brunch, item: denim_shirt )
