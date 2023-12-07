@@ -21,6 +21,7 @@
 
 .card-top{
   align-items: center;
+  border-radius: 10px 0 10px 0;
 }
 
   .owned-by-link {
@@ -32,17 +33,18 @@
 
   .pending{
     background-color: #798478;
-    width: 43%;
-    height: 262px;
+    width: 45%;
+    height: 300px;
     text-align: center;
-    border-radius: 10px;
     margin-left: 2px;
     align-items: center;
     display: flex;
+    border-radius: 25px;
   }
 
   .swap-pending{
     color: white;
+    letter-spacing: 3px;
   }
 
   .btn-cancel {
@@ -58,7 +60,7 @@
     border-style: solid;
     border-color: #6e7a6d;
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: 0;
     margin-right: 0;
     margin-left: 5px;
@@ -66,4 +68,21 @@
 
   .links{
     justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
   }
+
+.swap-background-card {
+  background-color: white;
+  height: 300px;
+  border-radius: 25px;
+}
+
+.swaps-request-info {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.container-swaps {
+  margin-bottom: 60px;
+}
