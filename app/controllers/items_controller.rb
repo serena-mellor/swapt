@@ -7,7 +7,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
 
-  @items = Item.where(swappable: true).where.not(user: current_user)
+  @items = Item.where(swappable: true).where.not(user: current_user).with_attached_photo
   @items = @items.search_by_title_and_description(params[:query]) if params[:query].present?
   @items = @items.where(category_id: params[:category_id]) if params[:category_id].present?
   @items = @items.where(user_id:User.near(current_user.address, params[:distance]).map(&:id)) if params[:distance]
@@ -56,7 +56,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   def update
     @item = Item.find(params[:id])
     @item.update(items_params)
-    redirect_to items_path
+    redirect_to my_closet_path, notice: "Item updated"
   end
 
   private

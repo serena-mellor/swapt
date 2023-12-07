@@ -1,3 +1,11 @@
-<h2><%= item.title %></h2>
-<p><%= item.user.username %></p>
-<img src="<%= cl_image_path(item.photo.key) %>" alt="<%= item.description %>">
+<div class="pop-up-container">
+  <h2><%= item.user.username  %></h2>
+  <% swappable_items= item.user.items.where(swappable: true)%>
+  <p><%= swappable_items.count%> items available to swap.</p>
+  <% swappable_items.take(3).each do |swap| %>
+    <%= cl_image_tag(swap.photo.key, width: 50, height: 50) %>
+    <% end %>
+    <div class="see-more">
+    <%= link_to "See more", closet_path(item.user) %>
+    </div>
+</div>

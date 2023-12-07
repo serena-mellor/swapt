@@ -1,10 +1,18 @@
 .mapboxgl-popup {
   max-width: 200px;
+
+
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "poppins", sans-serif;
+  border: 1px solid black;
+}
+
+.pop-up-container {
+  padding: 10px;
+  border-radius: 20%;
 }
 
 /* The switch - the box around the slider */
@@ -59,3 +67,27 @@
  input:checked + .slider:before {
   transform: translateX(1.5em);
  }
+
+ .slider-div {
+  display: flex;
+  justify-content: center;
+ }
+
+.switch-div {
+  display: flex;
+  align-items: center;
+}
+
+.range-div {
+  position: absolute;
+  top: 75%;
+}
+
+.show-range {
+  position: relative;
+}
+
+.distance-number {
+  font-size: 12px;
+  opacity: 0.6;
+}

@@ -1,49 +1,52 @@
-<div class="container" data-controller="search-items">
-  <div class="row">
-    <div class="col-10 d-flex justify-content-end">
-      <%= render "shared/search" %>
-    </div>
-    <div class="col-2 d-flex justify-content-end">
-      <%= render "shared/hamburger_menu" %>
-    </div>
-  </div>
-<div data-controller="map-toggle toggle-list">
-<div class="row">
-  <div class="col-12">
-    <h2 class="header-items">Swappable Items</h2>
-    <div class="d-flex filter-button-row gap-3" data-controller="show-dropdown">
-      <div class="dropdown">
-        <button class="filter-button dropdown-toggle" data-action="click->show-dropdown#reveal">Sort</button>
-        <div data-show-dropdown-target="dropdown" class="d-none">
-        <%= link_to "Most Recent", items_path(sort: :newest) %>
-        <%= link_to "Alphabetical", items_path(sort: :alphabetical) %>
-        </div>
-      </div>
-      <div data-controller="show-range">
-        <button data-action="click->show-range#toggle" class="filter-button">Location</button>
-        <div data-show-range-target="togglableElement" class="<%= "d-none" unless params[:distance].present?%>">
-          <%= form_with(url: items_path, method: :get) do |f| %>
-            <%= f.range_field :distance, onchange: 'this.form.submit()', value: params[:distance] %>
-          <% end %>
-        </div>
-      </div>
-    <div>
-      <label class="switch">
-        <input data-action="click->map-toggle#map click->toggle-list#list"  type="checkbox" >
-        <span class="slider"></span>
-      </label>
-    </div>
-  </div>
-  <div data-toggle-list-target="toggleList">
-    <%= render "items_list", items: @items %>
-  </div>
-  </div>
-</div>
-<div data-map-toggle-target="mapToggle" class="d-none"style="width: 90%; height: 400px; display: flex; justify-content: center; margin: 0 auto;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-</div>
 
+<div data-controller="search-items" class="mt-2">
+  <div class="search-row d-flex justify-content-end align-items-center">
+      <%= render "shared/search" %>
+      <%= render "shared/hamburger_menu" %>
+  </div>
+
+  <div class="container"  >
+    <div data-controller="map-toggle toggle-list">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="header-items">Swappable Items</h2>
+          <div class="d-flex filter-button-row gap-3" data-controller="show-dropdown">
+            <div class="dropdown">
+              <button class="filter-button dropdown-toggle" data-action="click->show-dropdown#reveal">SORT</button>
+              <div data-show-dropdown-target="dropdown" class="d-none">
+              <%= link_to "Most Recent", items_path(sort: :newest) %>
+              <%= link_to "Alphabetical", items_path(sort: :alphabetical) %>
+              </div>
+            </div>
+            <div data-controller="show-range" class="show-range">
+              <button data-action="click->show-range#toggle" class="filter-button">DISTANCE</button>
+              <div data-show-range-target="togglableElement"  class="range-div <%= "d-none" unless params[:distance].present?%>">
+                <%= form_with(url: items_path, method: :get) do |f| %>
+                  <%= f.range_field :distance, onchange: 'this.form.submit()', value: params[:distance], step: 0.1, max: 10 %>
+                  <div class="d-flex justify-content-center">
+                  <p class="distance-number"><%= params[:distance] %>km</p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="switch-div">
+              <label class="switch">
+                <input data-map-toggle-target="switch" data-action="click->map-toggle#map click->toggle-list#list"  type="checkbox" >
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+          <div data-toggle-list-target="toggleList">
+            <%= render "items_list", items: @items %>
+          </div>
+          <div data-map-toggle-target="mapToggle" class="d-none mt-4"style="width: 90%; height: 400px; display: flex; justify-content: center; margin: 0 auto;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <%# <%= form_tag(search_items_path, method: :get) do %>
