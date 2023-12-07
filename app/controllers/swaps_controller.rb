@@ -1,11 +1,11 @@
 class SwapsController < ApplicationController
 
   def index
-    @swaps_requested = Swap.all.where(sender: current_user).select {|swap| swap.status == "pending"}
+    @swaps_requested = Swap.where(sender: current_user, status: "pending" )
   end
 
   def received_swaps
-    @swaps_received = Swap.all.where(receiver: current_user).select {|swap| swap.status == "pending"}
+    @swaps_received = Swap.all.where(receiver: current_user, status: "pedning" )
   end
 
   def create

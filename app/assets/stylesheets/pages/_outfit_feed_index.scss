@@ -1,7 +1,12 @@
 .outfit-cards {
+
   .heading-outfit-index {
     margin-top: 15px;
     line-break: strict;
+  }
+
+  .outfit-heading {
+    text-align: center;
   }
 
   .outfit-card-explore {
@@ -9,8 +14,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid 1px #798478;
-    margin: 0 0 25px 0;
+    box-shadow: 0 0 12px rgba(155, 154, 154, 0.313);
+    border-radius: 25px;
+    margin: 50px 0 25px 0;
   }
 
   .outfit-items {
@@ -18,5 +24,95 @@
     flex-direction: column;
     align-items: center;
     margin: 15px 0 15px 0;
+  }
+}
+
+.favourites-container {
+  text-align: end;
+  padding-right: 20px;
+}
+
+.outfit-description {
+  background-color: white;
+  z-index: 1;
+  margin-top: -30px;
+  border-top-left-radius: 25px;
+  width: 100%;
+  padding: 5px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding-block: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.outfit-container {
+  box-shadow: 0 0 12px rgba(155, 154, 154, 0.313);
+  border-radius: 25px;
+  margin: 15px 0 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outfit-image::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  bottom: 30px;
+  right: 0px;
+  height: 100px;
+  width: 60px;
+  border-bottom-right-radius: 100px;
+  box-shadow: 0px 50px 0px white;
+}
+
+.outfit-image {
+  position: relative;
+  width: 100%;
+
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Outfit show  */
+
+.outfit-card-explore {
+
+  .outfit-description {
+    background-color: white;
+    z-index: 1;
+    border-top-left-radius: 25px;
+    width: 100%;
+    padding: 5px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 25px;
+    padding-block: 20px;
+    display: block;
+    text-align: center;
+  }
+
+  .outfit-image::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: -15px;
+    right: 0px;
+    height: 100px;
+    width: 60px;
+    border-top-right-radius: 500px;
+    box-shadow: 0px -50px 0px white;
+  }
+
+  .outfit-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
