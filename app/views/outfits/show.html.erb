@@ -1,11 +1,15 @@
 <div class="container">
   <%= render "shared/hamburger_menu" %>
-    <h2 class="outfit-heading"><%= @outfit.name.upcase %></h2>
     <div class="outfit-container">
+      <div class="outfit-image">
       <% @outfit.sort_items_by_position.each do |item| %>
         <% height = item_height(item) %>
         <% width = item_width(item) %>
         <%= cl_image_tag item.photo.key, height: height, width: width, crop: :fill %>
       <% end %>
+      </div>
+      <div class="outfit-description">
+        <h2 class="outfit-heading"><%= @outfit.name.upcase %></h2>
+      </div>
     </div>
 </div>
