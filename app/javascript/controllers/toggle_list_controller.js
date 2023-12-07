@@ -5,7 +5,9 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["toggleList"];
   connect() {
-    console.log("tg tg gt");
+    if(sessionStorage.getItem("showMap") == "true") {
+      this.toggleListTarget.classList.add("d-none")
+    }
   }
 
   list() {
