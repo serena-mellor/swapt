@@ -1,10 +1,18 @@
 .mapboxgl-popup {
   max-width: 200px;
+
+
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "poppins", sans-serif;
+  border: 1px solid black;
+}
+
+.pop-up-container {
+  padding: 10px;
+  border-radius: 20%;
 }
 
 /* The switch - the box around the slider */
