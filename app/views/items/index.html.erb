@@ -13,7 +13,7 @@
           <div class="d-flex filter-button-row gap-3" data-controller="show-dropdown">
             <div class="dropdown">
               <button class="filter-button dropdown-toggle" data-action="click->show-dropdown#reveal">SORT</button>
-              <div data-show-dropdown-target="dropdown" class="d-none">
+              <div data-show-dropdown-target="dropdown" class="d-none dropdown-items">
               <%= link_to "Most Recent", items_path(sort: :newest) %>
               <%= link_to "Alphabetical", items_path(sort: :alphabetical) %>
               </div>
