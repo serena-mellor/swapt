@@ -271,10 +271,10 @@ hat = Item.new(title: "Black hat", description: "Thick felt hat with ribbon arou
 hat.photo.attach(io: hat_image, filename: "image/hat")
 hat.save
 
-coat_image = File.open("app/assets/images/black_coat.png")
-coat = Item.new(title: "Black coat", description: "High quality crafted classic coat.", swappable: true, user: camilla, category: jackets)
-coat.photo.attach(io: coat_image, filename: "image/coat")
-coat.save
+leather_image = File.open("app/assets/images/leather.png")
+leather = Item.new(title: "Black leather jacket", description: "High quality biker jacket", swappable: true, user: camilla, category: jackets)
+leather.photo.attach(io: leather_image, filename: "image/leather")
+leather.save
 
 sherpa_image = File.open("app/assets/images/sherpa.png")
 sherpa = Item.new(title: "Denim Trucker Jacket", description: "The shearling collar and lining comes in a contrasting white colour and will keep you nice and warm.", swappable: true, user: sandra, category: jackets)
@@ -286,10 +286,10 @@ brown = Item.new(title: "Brown sherpa jacket", description: "Stay warm this wint
 brown.photo.attach(io: brown_image, filename: "image/brown")
 brown.save
 
-trench_image = File.open("app/assets/images/trench.png")
-trench = Item.new(title: "Beige trench coat", description: "Timeless classic", swappable: true, user: camilla, category: jackets)
-trench.photo.attach(io: trench_image, filename: "image/trench")
-trench.save
+suede_image = File.open("app/assets/images/suede.png")
+suede = Item.new(title: "Suede jacket", description: "Classic details include a collared neckline, asymmetric zip-up front and angled pockets.", swappable: true, user: camilla, category: jackets)
+suede.photo.attach(io: suede_image, filename: "image/suede")
+suede.save
 
 blue_sweater_image = File.open("app/assets/images/bluesweater.png")
 blue_sweater = Item.new(title: "Winter Sweater", description: "Basic and beautiful design.", swappable: true, user: gavin, category: knitwear)
