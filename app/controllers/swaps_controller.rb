@@ -5,7 +5,7 @@ class SwapsController < ApplicationController
   end
 
   def received_swaps
-    @swaps_received = Swap.all.where(receiver: current_user, status: "pedning" )
+    @swaps_received = Swap.all.where(receiver: current_user, status: "pending" )
   end
 
   def create
