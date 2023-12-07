@@ -21,6 +21,10 @@ class SwapsController < ApplicationController
     end
   end
 
+  def show
+    @swap = Swap.find(params[:id])
+  end
+
   def update
     @item = Item.find(params[:item_id])
     swap = Swap.find(params[:id])
@@ -36,7 +40,7 @@ class SwapsController < ApplicationController
       swap.accepted!
       chat = Chatroom.create!(swap: swap)
 
-      redirect_to chatroom_path(chat)
+      redirect_to swap_path(swap)
     end
   end
 end

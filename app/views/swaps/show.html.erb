@@ -1,0 +1,10 @@
+<div class="container-confirmation">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+
+        <%= image_tag "accept.png", alt: "Swap confirmed", class:'confirmation-img' %>
+      <h1 class="confirmation">Swap confirmed</h1>
+      <div class="button">
+      <%= link_to "START CHAT", chatroom_path(@swap.chatroom), class:"btn-confirmation" %>
+      </div>
+    </div>
+  </div>
