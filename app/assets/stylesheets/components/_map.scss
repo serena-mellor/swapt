@@ -47,9 +47,13 @@
 
  .slider:before {
   position: absolute;
-  content: "";
-  height: 1.9em;
-  width: 1.9em;
+  font: var(--fa-font-solid);
+  text-align: center;
+  font-size: 16px;
+  padding-top: 6px;
+  content: "\f5a0";
+  height: 1.9rem;
+  width: 1.9rem;
   border-radius: 16px;
   left: 1.2px;
   top: 0;

@@ -24,20 +24,21 @@
 }
 
 .filter-button {
-  color: white;
+  color: black;
   padding: 6px 4px;
   min-width: 120px;
   text-align: center;
   margin-block: 20px;
   border-radius: 10px;
-  opacity: 1;
-  background-color: #798478;
-  box-shadow: 0px 0px 4px rgba(33, 33, 33, 0.419);
+  background-color: #F3EDE2;
+  // opacity: 1;
+  // background-color: #798478;
+  // box-shadow: 0px 0px 4px rgba(33, 33, 33, 0.419);
   border: none;
   text-decoration: none;
   letter-spacing: 2px;
-  border-style: solid;
-  border-color: #6e7a6d;
+  // border: 2px solid black;
+  box-shadow: 0 0 12px rgba(155, 154, 154, 0.443);
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 0;
@@ -72,7 +73,7 @@
     outline: none;
   }
   input[type=range]::-webkit-slider-runnable-track {
-    background: #e3e3e3;
+    background: #798478bf;
     border: 0.2px solid #010101;
     border-radius: 7.2px;
     width: 100%;
@@ -93,7 +94,7 @@
     background: #f0f0f0;
   }
   input[type=range]::-moz-range-track {
-    background: #e3e3e3;
+    background: #798478bf;
     border: 0.2px solid #010101;
     border-radius: 7.2px;
     width: 100%;
@@ -123,7 +124,7 @@
     border-radius: 14.4px;
   }
   input[type=range]::-ms-fill-upper {
-    background: #e3e3e3;
+    background: #798478bf;
     border: 0.2px solid #010101;
     border-radius: 14.4px;
   }
@@ -138,7 +139,7 @@
     /*Needed to keep the Edge thumb centred*/
   }
   input[type=range]:focus::-ms-fill-lower {
-    background: #e3e3e3;
+    background: #798478bf;
   }
   input[type=range]:focus::-ms-fill-upper {
     background: #f0f0f0;
@@ -154,9 +155,5 @@
   }
 
   .dropdown-items {
-    border: 2px solid black;
-    background-color: white;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 2px;
-    padding: 6px;
+
   }
