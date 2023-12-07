@@ -4,12 +4,12 @@
   </a>
 
   <ul class="dropdown-menu wide-menu-options" aria-labelledby="dropdownMenuLink">
-    <%= link_to "My profile", profile_path(current_user), class:"dropdown-item hamburger-link" %>
-    <%= link_to "My outfits", my_outfits_path, class:"dropdown-item hamburger-link" %>
-    <%= link_to "My chats", chatrooms_path, class:"dropdown-item hamburger-link" %>
-    <%= link_to "My favourites", my_favourites_path, class:"dropdown-item hamburger-link" %>
-    <%= link_to "Swap requests", swaps_path, class:"dropdown-item hamburger-link" %>
-    <%= link_to "Received swaps", received_swaps_path, class:"dropdown-item hamburger-link" %>
-    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class:"dropdown-item hamburger-link" %>
+    <%= link_to "My Profile", profile_path(current_user), class:"dropdown-item hamburger-link" %>
+    <%= link_to "My Outfits", my_outfits_path, class:"dropdown-item hamburger-link" %>
+    <%= link_to "Favourites", my_favourites_path, class:"dropdown-item hamburger-link" %>
+    <%= link_to "Swap Requests", swaps_path, class:"dropdown-item hamburger-link" %>
+    <%= link_to "Incoming Swaps", received_swaps_path, class:"dropdown-item hamburger-link" %>
+    <%= link_to "Chats", chatrooms_path, class:"dropdown-item hamburger-link" %>
+    <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class:"dropdown-item hamburger-link" %>
   </ul>
 </div>
