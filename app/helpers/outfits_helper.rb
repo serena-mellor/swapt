@@ -7,6 +7,8 @@ module OutfitsHelper
       250
     elsif item.category.bottom?
       150
+    elsif item.category.dress?
+      300
     else
       200
     end
