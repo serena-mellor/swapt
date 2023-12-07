@@ -59,3 +59,27 @@
  input:checked + .slider:before {
   transform: translateX(1.5em);
  }
+
+ .slider-div {
+  display: flex;
+  justify-content: center;
+ }
+
+.switch-div {
+  display: flex;
+  align-items: center;
+}
+
+.range-div {
+  position: absolute;
+  top: 75%;
+}
+
+.show-range {
+  position: relative;
+}
+
+.distance-number {
+  font-size: 12px;
+  opacity: 0.6;
+}

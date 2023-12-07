@@ -56,7 +56,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   def update
     @item = Item.find(params[:id])
     @item.update(items_params)
-    redirect_to items_path
+    redirect_to my_closet_path, notice: "Item updated"
   end
 
   private

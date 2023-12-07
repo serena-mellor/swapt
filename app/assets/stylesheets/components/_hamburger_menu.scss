@@ -7,18 +7,23 @@
     border: none !important;
     margin-right: 0px;
     border-color: transparent !important;
-    margin-top: 9px;
 }
 
 .right-aligned-hamburger {
   display: flex;
   justify-content: right;
   align-items: center;
+  margin-top: 10px;
+  margin-right: 10px;
 
 
   i {
     font-size: 26px;
   }
+}
+
+.search-row .right-aligned-hamburger {
+  margin-top: 0;
 }
 
 .wide-menu-options {
