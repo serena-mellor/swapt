@@ -1,9 +1,10 @@
+<%= render "shared/hamburger_menu" %>
 <div class="container-chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>"
 >
-  <h1 class="p-2"><%= "Chat to #{name(@chatroom)}" %></h1>
+  <h1 class="h1-chat p-2 text-center"><%= "CHAT TO #{name(@chatroom).upcase}" %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
   <% @chatroom.messages.each do |message| %>

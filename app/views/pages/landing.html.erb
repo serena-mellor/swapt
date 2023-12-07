@@ -7,8 +7,12 @@
     <%= video_tag "fashion_video.mp4", id: "video", autoplay: true, muted: true, controls: false, loop: true, playsinline: true %>
   </div>
   <div class="btns-landing-page">
+  <% if current_user.present? %>
+    <%= link_to "ENTER", home_path, class:"btn-secondary enter-button" %>
+    <% else %>
     <%= link_to "Log In", new_user_session_path, class:"btn-main" %>
     <%= link_to "Sign Up", new_user_registration_path, id:"btn-sign-up", class:"btn-secondary" %>
     <%= link_to "Continue As Visitor", home_path, id:"link-visitor" %>
+    <% end %>
   </div>
 </div>
