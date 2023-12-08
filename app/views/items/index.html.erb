@@ -21,8 +21,9 @@
             <div data-controller="show-range" class="show-range">
               <button data-action="click->show-range#toggle" class="filter-button">DISTANCE</button>
               <div data-show-range-target="togglableElement"  class="range-div <%= "d-none" unless params[:distance].present?%>">
-                <%= form_with(url: items_path, method: :get) do |f| %>
+                <%= form_with(url: request.url, method: :get) do |f| %>
                   <%= f.range_field :distance, onchange: 'this.form.submit()', value: params[:distance], step: 0.1, max: 10 %>
+                  <%= f.hidden_field :map, value: params[:map], data: { map_toggle_target: "sliderShowMapInput" } %>
                   <div class="d-flex justify-content-center">
                   <p class="distance-number"><%= params[:distance] %>km</p>
                   </div>
@@ -31,15 +32,15 @@
             </div>
             <div class="switch-div">
               <label class="switch">
-                <input data-map-toggle-target="switch" data-action="click->map-toggle#map click->toggle-list#list"  type="checkbox" >
+                <input data-map-toggle-target="switch" data-action="click->map-toggle#map click->toggle-list#list"  type="checkbox" <%= "checked" if params["map"] == "1" %> >
                 <span class="slider"></span>
               </label>
             </div>
           </div>
-          <div data-toggle-list-target="toggleList">
+          <div data-toggle-list-target="toggleList" class="<%= "d-none" if params["map"] == "1" %>">
             <%= render "items_list", items: @items %>
           </div>
-          <div data-map-toggle-target="mapToggle" class="d-none mt-4"style="width: 90%; height: 400px; display: flex; justify-content: center; margin: 0 auto;"
+          <div data-map-toggle-target="mapToggle" class="<%= "d-none" unless params["map"] == "1" %> mt-4"style="width: 90%; height: 400px; display: flex; justify-content: center; margin: 0 auto;"
             data-controller="map"
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
