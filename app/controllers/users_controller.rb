@@ -8,15 +8,15 @@ class UsersController < ApplicationController
   end
 
   def my_outfits
-    @outfits = current_user.outfits
+    @outfits = current_user.outfits.order(created_at: :desc)
   end
 
   def my_closet
-    @items = current_user.items
+    @items = current_user.items.order(created_at: :desc)
   end
 
   def my_favourites
-    @favourites = current_user.favourited_outfits
+    @favourites = current_user.favourited_outfits.order(created_at: :desc)
   end
 
   def closet

@@ -63,6 +63,27 @@ sandra = User.create!(
   country: "Spain"
 )
 
+lucia = User.create!(
+  username: "lucia007",
+  first_name: "Lucia",
+  last_name: "Sunshine",
+  password: "123456",
+  email: "lucia@gmail.com",
+  address: "Carrer dels Comtes de Bell-Lloc,86",
+  postcode: "08014",
+  country: "Spain"
+)
+
+gaelle = User.create!(
+  username: "gaelle",
+  first_name: "Gaelle",
+  last_name: "Bordeaux",
+  password: "123456",
+  email: "gaelle@gmail.com",
+  address: "Pg. de St. Joan, 4",
+  postcode: "08010",
+  country: "Spain"
+)
 
 puts "Creating categories"
 
@@ -158,7 +179,7 @@ hawaiian_shirt.photo.attach(io: hawaiian_shirt_image, filename: "image/hawaiian_
 hawaiian_shirt.save
 
 long_sleeve_image = File.open("app/assets/images/henley.png")
-long_sleeve = Item.new(title: "Long Sleeve Henley", description: "Casual and cool with a laid-back vibe. Size: XL",swappable: true, user: sandra, category: shirts)
+long_sleeve = Item.new(title: "Long Sleeve Henley", description: "Casual and cool with a laid-back vibe. Size: XL",swappable: true, user: lucia, category: shirts)
 long_sleeve.photo.attach(io: long_sleeve_image, filename: "image/long_sleeve")
 long_sleeve.save
 
@@ -168,7 +189,7 @@ wide_leg.photo.attach(io: wide_leg_image, filename: "image/wide_leg")
 wide_leg.save
 
 leggings_image = File.open("app/assets/images/leggings.png")
-leggings = Item.new(title: "Athleisure Leggings", description: "Perfect for workouts or casual athleisure style. Size: XL",swappable: true, user: sandra, category: trousers)
+leggings = Item.new(title: "Athleisure Leggings", description: "Perfect for workouts or casual athleisure style. Size: XL",swappable: true, user: gaelle, category: trousers)
 leggings.photo.attach(io: leggings_image, filename: "image/leggings")
 leggings.save
 
@@ -233,7 +254,7 @@ jeans.photo.attach(io: jeans_image, filename: "image/jeans")
 jeans.save
 
 green_sweater_image = File.open("app/assets/images/green.png")
-green_sweater = Item.new(title: "Zip-up sweater", description: "Stay cozy and on-trend with a classic zip-up sweater. Size: XL",swappable: true, user: camilla, category: knitwear)
+green_sweater = Item.new(title: "Green sweater", description: "Stay cozy and on-trend with a classic sweater. Size: XL",swappable: true, user: camilla, category: knitwear)
 green_sweater.photo.attach(io: green_sweater_image, filename: "image/green_sweater")
 green_sweater.save
 
@@ -288,7 +309,7 @@ sherpa.photo.attach(io: sherpa_image, filename: "image/sherpa")
 sherpa.save
 
 brown_image = File.open("app/assets/images/brown_jacket.png")
-brown = Item.new(title: "Brown sherpa jacket", description: "Stay warm this winter. Size: M", swappable: true, user: gavin, category: jackets)
+brown = Item.new(title: "Brown sherpa jacket", description: "Stay warm this winter. Size: M", swappable: true, user: lucia, category: jackets)
 brown.photo.attach(io: brown_image, filename: "image/brown")
 brown.save
 
@@ -313,7 +334,7 @@ tote.photo.attach(io: tote_image, filename: "image/tote")
 tote.save
 
 backbag_image = File.open("app/assets/images/backbag.png")
-backbag = Item.new(title: "Backbag", description: "Water resistant bag", swappable: true, user: gavin, category: accessories)
+backbag = Item.new(title: "Backbag", description: "Water resistant bag", swappable: true, user: lucia, category: accessories)
 backbag.photo.attach(io: backbag_image, filename: "image/backbag")
 backbag.save
 
@@ -336,6 +357,42 @@ see_image = File.open("app/assets/images/see.png")
 see = Item.new(title: "Sheer shirt", description: "Disco shirt. Size M.", swappable: true, user: sandra, category: shirts)
 see.photo.attach(io: see_image, filename: "image/see")
 see.save
+
+pink_image = File.open("app/assets/images/pink.png")
+pink = Item.new(title: "Pink cap", description: "Girly casual cap. One size.", swappable: true, user: sandra, category: hats)
+pink.photo.attach(io: pink_image, filename: "image/pink")
+pink.save
+
+blackh_image = File.open("app/assets/images/blackh.png")
+blackh = Item.new(title: "Black hat", description: "Funky hat. One size.", swappable: true, user: camilla, category: hats)
+blackh.photo.attach(io: blackh_image, filename: "image/blackh")
+blackh.save
+
+velvetp_image = File.open("app/assets/images/velvetp.png")
+velvetp = Item.new(title: "Beige velvet pants", description: "80's style velvet pants. Size M.", swappable: true, user: camilla, category: trousers)
+velvetp.photo.attach(io: velvetp_image, filename: "image/velvetp")
+velvetp.save
+
+bluej_image = File.open("app/assets/images/bluej.png")
+bluej = Item.new(title: "Bootcut jeans", description: "Long jeans, perfect to wear with boots Size M.", swappable: true, user: camilla, category: trousers)
+bluej.photo.attach(io: bluej_image, filename: "image/bluej")
+bluej.save
+
+bootbeige_image = File.open("app/assets/images/bootbeige.png")
+bootbeige = Item.new(title: "Beige boots", description: "Boots for every weather. Size 40.", swappable: true, user: camilla, category: shoes)
+bootbeige.photo.attach(io: bootbeige_image, filename: "image/bootbeige")
+bootbeige.save
+
+trainer_image = File.open("app/assets/images/trainer.png")
+trainer = Item.new(title: "Cool trainers", description: "Colorful trainers for everyday styles. Size 40.", swappable: true, user: camilla, category: shoes)
+trainer.photo.attach(io: trainer_image, filename: "image/trainer")
+trainer.save
+
+blackl_image = File.open("app/assets/images/blackl.png")
+blackl = Item.new(title: "Wide leg jeans", description: "Black comfy jeans. Size M.", swappable: true, user: camilla, category: trousers)
+blackl.photo.attach(io: blackl_image, filename: "image/blackl")
+blackl.save
+
 
 sunday_brunch = Outfit.create!(name:"Sunday brunch", user:sandra)
 OutfitItem.create!(outfit: sunday_brunch, item: denim_shirt )

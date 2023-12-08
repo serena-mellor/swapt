@@ -2,7 +2,7 @@ class OutfitsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @outfits = Outfit.all
+    @outfits = Outfit.all.order(created_at: :desc)
   end
 
   def new

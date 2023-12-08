@@ -1,5 +1,6 @@
 <%= render "shared/hamburger_menu" %>
 <div class="container">
+  <h2 class="header-items">FAVOURITES</h2>
     <div class="outfit-cards">
       <% @favourites.each do |favourite| %>
         <%= render "outfits/outfit", outfit: favourite %>
