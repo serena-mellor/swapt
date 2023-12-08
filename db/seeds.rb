@@ -234,7 +234,7 @@ slip_ons.photo.attach(io: slip_ons_image, filename: "image/slip-ons")
 slip_ons.save
 
 high_heels_image = File.open("app/assets/images/heels.png")
-high_heels = Item.new(title: "High Heel Pumps", description: "Black essentials in every girls closet. Size: 40",swappable: true, user: sandra, category: shoes)
+high_heels = Item.new(title: "High Heel Pumps", description: "Black essentials in every girls closet. Size: 40",swappable: true, user: camilla, category: shoes)
 high_heels.photo.attach(io: high_heels_image, filename: "image/high_heels")
 high_heels.save
 
@@ -344,7 +344,7 @@ shiny.photo.attach(io: shiny_image, filename: "image/shiny")
 shiny.save
 
 skirt_image = File.open("app/assets/images/skirt.png")
-skirt = Item.new(title: "Black skirt", description: "For sophisticated look. Size M.", swappable: true, user: camilla, category: skirts)
+skirt = Item.new(title: "Black skirt", description: "For sophisticated look. Size M.", swappable: true, user: sandra, category: skirts)
 skirt.photo.attach(io: skirt_image, filename: "image/skirt")
 skirt.save
 
@@ -379,7 +379,7 @@ bluej.photo.attach(io: bluej_image, filename: "image/bluej")
 bluej.save
 
 bootbeige_image = File.open("app/assets/images/bootbeige.png")
-bootbeige = Item.new(title: "Beige boots", description: "Boots for every weather. Size 40.", swappable: true, user: camilla, category: shoes)
+bootbeige = Item.new(title: "Beige boots", description: "Boots for every weather. Size 40.", swappable: true, user: sandra, category: shoes)
 bootbeige.photo.attach(io: bootbeige_image, filename: "image/bootbeige")
 bootbeige.save
 
@@ -389,7 +389,7 @@ trainer.photo.attach(io: trainer_image, filename: "image/trainer")
 trainer.save
 
 blackl_image = File.open("app/assets/images/blackl.png")
-blackl = Item.new(title: "Wide leg jeans", description: "Black comfy jeans. Size M.", swappable: true, user: camilla, category: trousers)
+blackl = Item.new(title: "Wide leg jeans", description: "Black comfy jeans. Size M.", swappable: true, user: serena, category: trousers)
 blackl.photo.attach(io: blackl_image, filename: "image/blackl")
 blackl.save
 
