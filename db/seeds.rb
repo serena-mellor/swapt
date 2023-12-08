@@ -80,8 +80,8 @@ gaelle = User.create!(
   last_name: "Bordeaux",
   password: "123456",
   email: "gaelle@gmail.com",
-  address: "C/ dels Almogàvers, 4",
-  postcode: "08018",
+  address: "Pg. de St. Joan, 4",
+  postcode: "08010",
   country: "Spain"
 )
 
@@ -309,7 +309,7 @@ sherpa.photo.attach(io: sherpa_image, filename: "image/sherpa")
 sherpa.save
 
 brown_image = File.open("app/assets/images/brown_jacket.png")
-brown = Item.new(title: "Brown sherpa jacket", description: "Stay warm this winter. Size: M", swappable: true, user: gavin, category: jackets)
+brown = Item.new(title: "Brown sherpa jacket", description: "Stay warm this winter. Size: M", swappable: true, user: lucia, category: jackets)
 brown.photo.attach(io: brown_image, filename: "image/brown")
 brown.save
 
@@ -334,7 +334,7 @@ tote.photo.attach(io: tote_image, filename: "image/tote")
 tote.save
 
 backbag_image = File.open("app/assets/images/backbag.png")
-backbag = Item.new(title: "Backbag", description: "Water resistant bag", swappable: true, user: gavin, category: accessories)
+backbag = Item.new(title: "Backbag", description: "Water resistant bag", swappable: true, user: lucia, category: accessories)
 backbag.photo.attach(io: backbag_image, filename: "image/backbag")
 backbag.save
 
