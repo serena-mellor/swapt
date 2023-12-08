@@ -5,13 +5,13 @@
     <div class= "swap-card">
     <div class="d-flex card-top">
       <div class="col-6 p-2 swap-background-card">
-        <%= render "items/item", item: swap.requested_item, full_width: true, bg_color: "#F3EDE2" %>
+        <%= render "swaps/swap-picture-card", item: swap.requested_item, full_width: true, bg_color: "#F3EDE2" %>
         <p class="swaps-request-info">I've requested this from <%= link_to swap.receiver.username, closet_path(swap.receiver), class: 'owned-by-link' %></p>
       </div>
       <div class="align-self-center"> <i class="fa fa-exchange" aria-hidden="true"></i></div>
       <% if swap.second_item.present? %>
       <div class="col-6 p-2">
-        <%= render "items/item", item: swap.second_item, full_width: true, bg_color: "#F3EDE2" %>
+        <%= render "swaps/swap-picture-card", item: swap.second_item, full_width: true, bg_color: "#F3EDE2" %>
       </div>
       <% else %>
       <div class="col-6 p-2 pending">
