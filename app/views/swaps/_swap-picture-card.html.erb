@@ -1,5 +1,5 @@
 <% full_width = full_width || false %>
 <% bg_color = bg_color || false %>
-<div class="<%= full_width ? "col-12" : "col-6" %> image-container " style="<%="background-color:#{bg_color}" if bg_color  %>">
+<div class="<%= full_width ? "col-12" : "col-6" %> image-container remove-corners " style="<%="background-color:#{bg_color}" if bg_color  %>">
   <%= link_to cl_image_tag(item.photo.key, class: "item-picture"), item_path(item) %>
 </div>
