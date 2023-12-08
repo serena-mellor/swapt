@@ -33,6 +33,9 @@
     <% else %>
       <%  if swap = Swap.find_by(receiver: current_user, sender: @item.user, status: :pending) %>
         <%= link_to "ACCEPT SWAP", item_swap_path(@item, swap), data: {turbo_method: :patch}, class:"btn-accept" %>
+        <% elsif  swap = Swap.find_by(receiver: @item.user, sender: current_user, status: :pending) %>
+        <p class="pending-message"><%= "You already have a pending swap with this user." %></p>
+        <p class="pending-message-link"><%= link_to "➡️ See swappables from other users", items_path %></p>
         <% else %>
       <%= button_to "SWAP", item_swaps_path(@item), class:"btn-green" %>
       <% end %>
@@ -44,4 +47,3 @@
 <% content_for :meta_title, "#{@item.title} is on #{DEFAULT_META["meta_item_name"]}" %>
 <% content_for :meta_description, @item.description %>
 <% content_for :meta_image, cl_image_path(@item.photo.key) %>
-
