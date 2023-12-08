@@ -18,6 +18,11 @@
   text-decoration: none;
   color: #fff; /* White text color */
   font-size: 20px;
+  img {
+    height: 27px;
+    width: 27px;
+    filter: invert(1);
+  }
 }
 
 // /* CSS (Add this to your stylesheet) */
