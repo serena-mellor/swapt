@@ -184,7 +184,7 @@ long_sleeve.photo.attach(io: long_sleeve_image, filename: "image/long_sleeve")
 long_sleeve.save
 
 wide_leg_image = File.open("app/assets/images/beige.png")
-wide_leg = Item.new(title: "Wide Leg Trousers", description: "Make a statement with these fashionable wide-leg trousers. Size: M", user: sandra, category: trousers)
+wide_leg = Item.new(title: "Wide Leg Trousers", description: "Make a statement with these fashionable wide-leg trousers. Size: M",swappable: true, user: camilla, category: trousers)
 wide_leg.photo.attach(io: wide_leg_image, filename: "image/wide_leg")
 wide_leg.save
 
@@ -194,7 +194,7 @@ leggings.photo.attach(io: leggings_image, filename: "image/leggings")
 leggings.save
 
 culottes_image = File.open("app/assets/images/velvet.png")
-culottes = Item.new(title: "Cropped Culottes", description: "Stay on-trend with these chic and comfortable culottes. Size: S", swappable: true, user: camilla, category: trousers)
+culottes = Item.new(title: "Cropped Culottes", description: "Stay on-trend with these chic and comfortable culottes. Size: S", user: serena, category: trousers)
 culottes.photo.attach(io: culottes_image, filename: "image/culottes")
 culottes.save
 
@@ -214,7 +214,7 @@ shorts.photo.attach(io: shorts_image, filename: "image/shorts")
 shorts.save
 
 chinos_image = File.open("app/assets/images/capri.png")
-chinos = Item.new(title: "Chino Trousers", description: "A versatile and polished option for various occasions. Size: L", user: camilla, category: trousers)
+chinos = Item.new(title: "Chino Trousers", description: "A versatile and polished option for various occasions. Size: L", user: sandra, category: trousers)
 chinos.photo.attach(io: chinos_image, filename: "image/chinos")
 chinos.save
 
@@ -279,12 +279,12 @@ beanie.photo.attach(io: beanie_image, filename: "image/beanie")
 beanie.save
 
 beret_image = File.open("app/assets/images/beret.png")
-beret = Item.new(title: "Red beret", description: "100% wool. One Size", swappable: true, user: sandra, category: hats)
+beret = Item.new(title: "Red beret", description: "100% wool. One Size", swappable: true, user: camilla, category: hats)
 beret.photo.attach(io: beret_image, filename: "image/beret")
 beret.save
 
 cap_image = File.open("app/assets/images/cap.png")
-cap = Item.new(title: "Baseball cap", description: "100% cotton. One Size", swappable: true, user: camilla, category: hats)
+cap = Item.new(title: "Baseball cap", description: "100% cotton. One Size", swappable: true, user: sandra, category: hats)
 cap.photo.attach(io: cap_image, filename: "image/cap")
 cap.save
 
@@ -314,7 +314,7 @@ brown.photo.attach(io: brown_image, filename: "image/brown")
 brown.save
 
 suede_image = File.open("app/assets/images/suede.png")
-suede = Item.new(title: "Suede jacket", description: "Classic details include a collared neckline, asymmetric zip-up front and angled pockets.Size L", swappable: true, user: camilla, category: jackets)
+suede = Item.new(title: "Suede jacket", description: "Classic details include a collared neckline, asymmetric zip-up front and angled pockets.Size L", swappable: true, user: sandra, category: jackets)
 suede.photo.attach(io: suede_image, filename: "image/suede")
 suede.save
 
@@ -339,12 +339,12 @@ backbag.photo.attach(io: backbag_image, filename: "image/backbag")
 backbag.save
 
 shiny_image = File.open("app/assets/images/shiny.png")
-shiny = Item.new(title: "Glitter skirt", description: "Midi, perfect for night out. Size S.", swappable: true, user: camilla, category: skirts)
+shiny = Item.new(title: "Glitter skirt", description: "Midi, perfect for night out. Size S.", swappable: true, user: sandra, category: skirts)
 shiny.photo.attach(io: shiny_image, filename: "image/shiny")
 shiny.save
 
 skirt_image = File.open("app/assets/images/skirt.png")
-skirt = Item.new(title: "Black skirt", description: "For sophisticated look. Size M.", swappable: true, user: sandra, category: skirts)
+skirt = Item.new(title: "Black skirt", description: "For sophisticated look. Size M.", swappable: true, user: camilla, category: skirts)
 skirt.photo.attach(io: skirt_image, filename: "image/skirt")
 skirt.save
 
